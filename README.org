@@ -1,0 +1,63 @@
+
+* Idea
+
+Configure every application with XDG structure.
+If not supported directly by application, symlinks from .config/app should
+be provided.
+
+* Installation
+
+  $repo/install.sh
+  destdir=/tmp/test-it $repo/install.sh
+
+* Layout
+
+  - configuration directories
+    dir $repo/<application>/config
+    dir $repo/<application>/local/share
+
+  - (proxy) dot files
+    $repo/<application>/rc-<filename-without-leading-dot>
+
+  - install hook (optional)
+    $repo/<application>/install.sh
+
+* Install hook
+
+Install hook should use install functions whenever appropriate.
+If necessary it should use global variables as well.
+
+** default behaviour
+   - hpb-install-dir config
+   - hpb-install-dir local/share
+   - hpb-create-rc-file $CURRENT_APP
+
+** install functions
+
+*** hpb-install-dir dir
+
+Install subdir of $CURRENT_APP.
+By default installs config and local/share
+
+Automatically removes dead links.
+
+*** hpb-create-cache-dir [subdir]
+
+Create cache subdir, by default $DESTDIR/.cache/$CURRENT_APP/$subdir.
+Subdir is optional.
+
+*** hpb-create-rc-file file [dest-name]
+
+Symlink file into DESTDIR/$dest-name
+If destname is omitted, .$file is used.
+Tries to find file as:
+   - $DESTDIR/.config/$CURRENT_APP/$file
+   - $SOURCEDIR/$CURRENT_APP/rc-$file
+
+** global variables
+
+*** CURRENT_APP
+
+Name of current application, eg: bash
+
+
