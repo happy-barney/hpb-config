@@ -1,0 +1,22 @@
+
+source-dir () {
+    for dir; do
+        for file in $dir/* ; do
+            [ -r "$file" ] && source "$file"
+        done
+    done
+}
+
+source-subdir () {
+    source-dir ~/.config/bash/$1 ~/.config/bash-local/$1
+}
+
+source-subdir rc.d
+
+[ -t 0 ] && source-subdir interactive.d
+
+cd ~
+
+# Local Variables:
+# mode: sh
+# End:

@@ -1,0 +1,16 @@
+
+export PATH=\
+~/bin:\
+/usr/local/sbin:\
+/usr/sbin:\
+/sbin:\
+/usr/local/bin:\
+/usr/bin:\
+/bin:\
+/usr/local/games:\
+/usr/games:\
+.
+
+# Local Variables:
+# mode: sh
+# End:

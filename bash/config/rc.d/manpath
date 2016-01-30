@@ -1,0 +1,7 @@
+
+export MANPATH=:\
+~/man
+
+# Local Variables:
+# mode: sh
+# End:

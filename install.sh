@@ -29,8 +29,8 @@ hpb-install () {
         dest=$DESTDIR/.$type/$CURRENT_APP
 
         mkdir-if $dest
-        cp -Rsndf -t $dest $SOURCEDIR/$CURRENT_APP/$type/*
-        find $dest -follow -type l -exec {} \;
+        cp -Rsdf -t $dest $SOURCEDIR/$CURRENT_APP/$type/*
+        find $dest -follow -type l -exec rm {} \;
     fi
 }
 

@@ -1,0 +1,6 @@
+
+export PERLBREW_ROOT=~/.cache/perlbrew
+
+# Local Variables:
+# mode: sh
+# End:

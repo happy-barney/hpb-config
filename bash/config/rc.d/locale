@@ -1,0 +1,9 @@
+
+unset LANG LANGUAGE LC_ALL LC_COLLATE LC_CTYPE LC_MESSAGES LC_NUMERIC
+export LANG=en_US.utf-8
+export LC_COLLATE=C
+export LC_TIME=en_DK.utf8
+
+# Local Variables:
+# mode: sh
+# End:

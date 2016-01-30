@@ -1,0 +1,21 @@
+
+terminal_name ()
+{
+    echo -ne "\033]0; Terminal - $*\007"
+}
+
+pod-ps ()
+{
+    [ -f "$1" ] || perldoc "$1" >"$1";
+    vi ./"$1";
+    a2ps --center-title="$1" --left-title='' -o "$1".ps "$1";
+    gv "$1".ps
+}
+
+lir () {
+    locate -ier "$*" | sort | less
+}
+
+# Local Variables:
+# mode: sh
+# End:

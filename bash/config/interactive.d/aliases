@@ -1,0 +1,27 @@
+
+gen-alias () {
+    local name="$1"; shift
+    alias "$name"="$*"
+}
+
+alias ls="ls \$LS_OPTIONS"
+alias l="ls"         L="ls -L"      d="ls -d"     D="ls -dL"
+alias ll="ls -l"    LL="ls -Ll"    dl="ls -ld"   DL="ls -Lld"
+alias la="ls -A"    LA="ls -LA"    da="ls -da"   DA="ls -Lda"
+alias lla="ls -lA" LLA="ls -LlA"  dla="ls -lda" DLA="ls -Llda"
+
+alias mv="mv -i"
+
+alias ..="ls -lA"
+
+alias hex='printf "%X\n"'
+
+alias 644="chmod 644" 664="chmod 664" 666="chmod 666"
+alias 755="chmod 755" 775="chmod 775" 777="chmod 777"
+
+gen-alias find-file emacsclient -n
+gen-alias f-f       find-file
+
+# Local Variables:
+# mode: sh
+# End:

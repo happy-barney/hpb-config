@@ -1,0 +1,6 @@
+
+export PERL5LIB=~/lib/perl5/${PERL5LIB:+:$PERL5LIB}
+
+# Local Variables:
+# mode: sh
+# End:

@@ -1,0 +1,16 @@
+
+# TODO: if shared home (nfs) or sync-home
+# TODO: set HISTFILE with hostname
+
+export HISTCONTROL="ignoreboth:erasedups" # ignorespace && ignore dups
+export HISTSIZE=2000                      #
+export HISTFILESIZE=50000           # max lines in history file
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
+                                        # commands ignored in history
+#export HISTIGNORE="ls *:ll *:l *:fg *:bg"
+export command_oriented_history=on   # join multiline commands
+shopt -s histappend
+
+# Local Variables:
+# mode: sh
+# End:
