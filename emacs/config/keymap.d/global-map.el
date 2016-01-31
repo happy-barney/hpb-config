@@ -1,0 +1,61 @@
+;;; -*- Mode: Emacs-Lisp -*-
+
+(require 'hpb-magit-stage-current-buffer)
+
+(define-key global-map (kbd "C-x C-z"           ) nil)
+(define-key global-map (kbd "C-x <return>"      ) nil)
+(define-key global-map (kbd "C-x m") nil)
+
+(define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
+(define-key global-map (kbd "C-x m g") 'magit-status)
+(define-key global-map (kbd "C-x m s t") 'magit-status)
+(define-key global-map (kbd "C-x m . a") 'hpb-magit-stage-current-buffer)
+
+(define-key global-map (kbd "C-<f11>"              ) 'execute-extended-command)
+(define-key global-map (kbd "C-;"               ) (lambda () (interactive) (insert ";")))
+(define-key global-map (kbd "C-."               ) 'undo)
+(define-key global-map (kbd "<backtab>"         ) 'indent-relative)
+(define-key global-map (kbd "C-<tab>"           ) 'dabbrev-expand)
+(define-key global-map (kbd "C-c <tab>"         ) 'indent-to-column)
+(define-key global-map (kbd "C-<backtab>"  ) 'indent-to-column)
+(define-key global-map (kbd "C-c <left>"        ) 'hide-subtree)
+(define-key global-map (kbd "C-c C-<left>"      ) 'hide-subtree)
+(define-key global-map (kbd "C-c <right>"       ) 'show-subtree)
+(define-key global-map (kbd "C-c C-<right>"     ) 'show-subtree)
+(define-key global-map (kbd "C-c <up>"          ) 'hide-leaves)
+(define-key global-map (kbd "C-c C-<up>"        ) 'hide-leaves)
+(define-key global-map (kbd "DEL"               ) 'viper-delete-char)
+(define-key global-map (kbd "<insert>"          ) 'ignore)
+
+(define-key global-map (kbd   "<f1>"           ) 'help-command)
+(define-key global-map (kbd   "<f2>"           ) 'save-buffer)
+(define-key global-map (kbd "S-<f2>"           ) 'save-some-buffers)
+(define-key global-map (kbd "C-<f2>"           ) 'write-buffer)
+(define-key global-map (kbd   "<f3>"           ) 'find-file)
+(define-key global-map (kbd "S-<f3>"           ) 'find-file-at-point)
+(define-key global-map (kbd "C-<f3>"           ) 'find-file-at-point)
+(define-key global-map (kbd   "<f4>"           ) 'revert-buffer)
+(define-key global-map (kbd "S-<f4>"           ) 'make-frame)
+(define-key global-map (kbd "C-<f4>"           ) 'delete-frame)
+(define-key global-map (kbd   "<f5>"           ) 'switch-to-buffer)
+(define-key global-map (kbd "S-<f5>"           ) 'switch-to-buffer-other-frame)
+(define-key global-map (kbd   "<f6>"           ) 'other-window)
+(define-key global-map (kbd   "<f11>"          ) 'manual-entry)
+(define-key global-map (kbd   "<f12>"          ) 'kill-this-buffer)
+
+(define-key global-map (kbd "C-c M-%"          ) 'swap-words)
+(define-key global-map (kbd "C-c c"            ) 'compile)
+
+(define-key global-map (kbd "C-x <left>"   ) 'previous-buffer)
+(define-key global-map (kbd "C-x C-<left>" ) 'previous-buffer)
+(define-key global-map (kbd "C-x <right>"  ) 'next-buffer)
+(define-key global-map (kbd "C-x C-<right>") 'next-buffer)
+
+(define-key global-map (kbd "C-c o f") 'ff-find-other-file)
+(define-key global-map (kbd "<down-mouse-3>"         ) 'mouse-buffer-menu)
+
+(define-key global-map (kbd "C-L"	   ) (lambda () (interactive) (recenter 10)))
+
+(require 'move-lines)
+(define-key global-map (kbd "M-<up>"         ) 'move-lines-up)
+(define-key global-map (kbd "M-<down>"       ) 'move-lines-down)

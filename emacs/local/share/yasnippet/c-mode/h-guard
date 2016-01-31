@@ -1,0 +1,9 @@
+#name : #ifndef XXX; #define XXX; #endif
+# --
+#ifndef ${1:`(upcase (replace-regexp-in-string "[^a-zA-Z0-9]+" "_" (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))))`_H}
+#define $1 1
+
+$0
+
+#endif /* header guard */
+

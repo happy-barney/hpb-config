@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: use-test
+# key: use-test
+# binding: C-c + i t
+# --
+# use FindBin::Lib;
+use Test::More;

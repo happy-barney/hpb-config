@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: usev5
+# key: usev5
+# binding: C-c + i s
+# --
+${1:use v5.10;
+}use strict;
+use warnings;
+
+$0
