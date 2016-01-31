@@ -3,7 +3,6 @@
 (require 'cperl-mode)
 (require 'hpb-join)
 (require 'hpb-local)
-(require 'hpb-string-list-contains-p)
 (require 'hpb-perl-templates)
 
 ;;; Registry cperl-mode as default perl-mode

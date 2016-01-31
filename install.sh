@@ -8,7 +8,7 @@ DESTDIR=$(readlink -f ${DESTDIR:-$HOME})
 CURRENT_APP=
 CURRENT_CONFIG_DIR=
 
-set -x
+#set -x
 
 mkdir-if () {
     local dir=$1
