@@ -2,14 +2,24 @@
 
 (require 'hpb-magit-stage-current-buffer)
 
-(define-key global-map (kbd "C-x C-z"           ) nil)
-(define-key global-map (kbd "C-x <return>"      ) nil)
-(define-key global-map (kbd "C-x m") nil)
+(define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
+(define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
+(define-key global-map (kbd "C-x m"        ) nil) ; default: compose email
 
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
+
 (define-key global-map (kbd "C-x m g") 'magit-status)
 (define-key global-map (kbd "C-x m s t") 'magit-status)
+(define-key global-map (kbd "C-x m c o") 'magit-checkout)
+(define-key global-map (kbd "C-x m f f") 'magit-find-file)
+(define-key global-map (kbd "C-x m l l") 'magit-log-current)
 (define-key global-map (kbd "C-x m . a") 'hpb-magit-stage-current-buffer)
+(define-key global-map (kbd "C-x m . b") 'magit-blame)
+(define-key global-map (kbd "C-x m . B") 'magit-blame-quit)
+(define-key global-map (kbd "C-x m . e") 'magit-ediff-compare)
+(define-key global-map (kbd "C-x m . E") 'magit-ediff-stage)
+(define-key global-map (kbd "C-x m . l") 'magit-log-buffer-file)
+(define-key global-map (kbd "C-x m . y") 'magit-show-refs-popup)
 
 (define-key global-map (kbd "C-<f11>"              ) 'execute-extended-command)
 (define-key global-map (kbd "C-;"               ) (lambda () (interactive) (insert ";")))
@@ -40,6 +50,10 @@
 (define-key global-map (kbd   "<f5>"           ) 'switch-to-buffer)
 (define-key global-map (kbd "S-<f5>"           ) 'switch-to-buffer-other-frame)
 (define-key global-map (kbd   "<f6>"           ) 'other-window)
+(define-key global-map (kbd   "<f7>"           ) nil)
+(define-key global-map (kbd   "<f8>"           ) 'recenter)
+(define-key global-map (kbd   "<f9>"           ) 'next-error)
+(define-key global-map (kbd   "<f10>"          ) 'previous-error)
 (define-key global-map (kbd   "<f11>"          ) 'manual-entry)
 (define-key global-map (kbd   "<f12>"          ) 'kill-this-buffer)
 
@@ -59,3 +73,18 @@
 (require 'move-lines)
 (define-key global-map (kbd "M-<up>"         ) 'move-lines-up)
 (define-key global-map (kbd "M-<down>"       ) 'move-lines-down)
+
+(require 'projectile)
+(require 'helm-projectile)
+;;;
+(define-key viper-vi-basic-map (kbd "C-u") 'universal-argument)
+(define-key projectile-command-map (kbd "s h") 'helm-projectile-ag)
+(define-key projectile-command-map (kbd "f") nil)
+(define-key projectile-command-map (kbd "f p") 'projectile-find-file)
+(define-key projectile-command-map (kbd "f h") 'helm-projectile-find-file)
+(define-key projectile-command-map (kbd "F") nil)
+(define-key projectile-command-map (kbd "F p") 'projectile-find-file-in-known-projects)
+(define-key projectile-command-map (kbd "F h") 'helm-projectile-find-file-in-known-projects)
+
+(require 'whitespace)
+(define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
