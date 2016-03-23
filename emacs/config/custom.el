@@ -56,6 +56,7 @@
  '(font-menu-ignore-scaled-fonts nil t)
  '(fume-max-items 35)
  '(fume-perl-fully-qualified-names nil)
+ '(global-undo-tree-mode nil)
  '(gutter-buffers-tab-visible-p nil)
  '(html-helper-do-write-file-hooks nil)
  '(html-helper-htmldtd-version
@@ -83,6 +84,7 @@
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator (quote arrow-fade))
  '(projectile-completion-system (quote default))
+ '(projectile-enable-caching t)
  '(ps-paper-type (quote a4))
  '(ps-print-color-p nil)
  '(query-user-mail-address nil)
@@ -132,6 +134,7 @@
  '(font-lock-function-name-face ((((class color)) (:foreground "blue2"))))
  '(font-lock-keyword-face ((((class color) (background light)) (:foreground "brown" :size "14pt" :family "Dejavu Sans Mono" :italic nil :bold nil))))
  '(font-lock-type-face ((((class color) (background light)) (:foreground "blue4"))))
+ '(helm-moccur-buffer ((t (:foreground "cyan" :underline t))))
  '(html-helper-significant-tag-face ((t (:foreground "firebrick"))))
  '(powerline-active1 ((t (:inherit mode-line))))
  '(powerline-active2 ((t (:inherit mode-line))))
