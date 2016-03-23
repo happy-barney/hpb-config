@@ -56,6 +56,7 @@
 (define-key global-map (kbd   "<f10>"          ) 'previous-error)
 (define-key global-map (kbd   "<f11>"          ) 'manual-entry)
 (define-key global-map (kbd   "<f12>"          ) 'kill-this-buffer)
+(define-key global-map (kbd "C-S-<f12>"        ) 'hpb-kill-buffer-delete-file)
 
 (define-key global-map (kbd "C-c M-%"          ) 'swap-words)
 (define-key global-map (kbd "C-c c"            ) 'compile)
