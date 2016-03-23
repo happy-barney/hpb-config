@@ -41,6 +41,7 @@
 ;;; Code:
 
 (defun move-lines--internal (n)
+  (beginning-of-line)
   (let* ((start (point)) ;; The position of beginning of line of the first line
          (end start)     ;; The position of eol+\n of the end line
          col-init        ;; The current column for the first line
