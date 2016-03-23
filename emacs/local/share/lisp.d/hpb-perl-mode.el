@@ -55,6 +55,7 @@
      ;; skip multiline strings
      ((string= syntax-type "string") 999)
      ((string= face "font-lock-string-face") 999)
+     ((string= syntax-type "pod") 999)
      (t
       (looking-at outline-regexp)
       (let ( (match (match-string 1)) )
