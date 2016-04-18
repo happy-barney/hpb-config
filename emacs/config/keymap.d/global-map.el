@@ -9,6 +9,7 @@
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
 (define-key global-map (kbd "C-x m g") 'magit-status)
+(define-key global-map (kbd "C-x m y") 'magit-show-refs-popup)
 (define-key global-map (kbd "C-x m s t") 'magit-status)
 (define-key global-map (kbd "C-x m c o") 'magit-checkout)
 (define-key global-map (kbd "C-x m f f") 'magit-find-file)
