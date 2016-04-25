@@ -6,7 +6,7 @@
 
 (load-library "outline")
 (load-library "complete")
-(dynamic-completion-mode)
+;(dynamic-completion-mode)
 
 (require 'dired)
 (setq c-recognize-knr-p nil)
