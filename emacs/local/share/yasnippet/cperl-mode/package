@@ -3,10 +3,11 @@
 # key: package
 # binding: C-c + i p
 # --
-package ${1:`(hpb-perl-guess-package-name)`}${2: v${3:1.0.0}};
 
 ${4:use v5.10;
 }use strict;
 use warnings;
+
+package ${1:`(hpb-perl-guess-package-name)`}${2: v${3:1.0.0}};
 
 $0
