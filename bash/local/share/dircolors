@@ -105,6 +105,7 @@ EXEC 01;32
 .tlz 01;31
 .txz 01;31
 .zip 01;31
+.rar 01;31
 .z 01;31
 .Z 01;31
 .dz 01;31
@@ -177,16 +178,20 @@ EXEC 01;32
 .ogx 01;35
 # audio formats
 .aac 00;36
+.ape 00;34
 .au 00;36
+.avi 00;36
 .flac 00;34
 .mid 00;36
 .midi 00;36
 .mka 00;36
+.mkv 00;36
 .mp3 00;34
 .mpc 00;36
 .ogg 00;36
 .ra 00;36
 .wav 00;36
+.vw 00;34
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
 .axa 00;36
 .oga 00;36
