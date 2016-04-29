@@ -30,11 +30,9 @@
 (define-key global-map (kbd "C-c <tab>"         ) 'indent-to-column)
 (define-key global-map (kbd "C-<backtab>"  ) 'indent-to-column)
 (define-key global-map (kbd "C-c <left>"        ) 'hide-subtree)
-(define-key global-map (kbd "C-c C-<left>"      ) 'hide-subtree)
 (define-key global-map (kbd "C-c <right>"       ) 'show-subtree)
-(define-key global-map (kbd "C-c C-<right>"     ) 'show-subtree)
-(define-key global-map (kbd "C-c <up>"          ) 'hide-leaves)
-(define-key global-map (kbd "C-c C-<up>"        ) 'hide-leaves)
+(define-key global-map (kbd "C-c <up>"          ) (lambda () (interactive) (hide-subtree) (show-children)))
+(define-key global-map (kbd "C-c <down>"        ) 'show-children)
 (define-key global-map (kbd "DEL"               ) 'viper-delete-char)
 (define-key global-map (kbd "<insert>"          ) 'ignore)
 
