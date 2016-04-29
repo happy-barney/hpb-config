@@ -31,15 +31,15 @@
 (defconst hpb-perl-outline-regexp
   (concat
    "^"                                  ; Start of line
-   ;; "\\([ \\t]*\\)"                    ; Skip leading whitespace
-   "\\("                                ; begin capture group \1
+   "\\([ \\t]*\\)"                      ; Skip leading whitespace - capture group \1
+   "\\("                                ; begin capture group \2
    (hpb-join "\\|"
              (append
                hpb-perl-outline-pod-list
                '("[a-z_]+" "1")
                )
              )
-   "\\)"                                ; end capture group \1
+   "\\)"                                ; end capture group \2
    "\\b"                                ; Word boundary
    ))
 
@@ -58,9 +58,9 @@
      ((string= syntax-type "pod") 999)
      (t
       (looking-at outline-regexp)
-      (let ( (match (match-string 1)) )
+      (let ( (match (match-string 2)) )
         (cond
-         (match 1)
+         (match (string-bytes (match-string 1)))
          (t 999)
          )))
     )))
