@@ -19,7 +19,10 @@ alias hex='printf "%X\n"'
 alias 644="chmod 644" 664="chmod 664" 666="chmod 666"
 alias 755="chmod 755" 775="chmod 775" 777="chmod 777"
 
-gen-alias find-file emacsclient -n
+find-file () {
+	local i=
+    for i in "$@"; do emacsclient -n "$i"; done
+}
 gen-alias f-f       find-file
 
 # Local Variables:
