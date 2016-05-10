@@ -89,5 +89,5 @@
 (require 'whitespace)
 (define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
 
-(require 'puppet)
+(require 'puppet-mode)
 (define-key puppet-mode-map (kbd "C-c + i p") (lambda () (interactive) (insert (hpb-puppet-guess-manifest-name))))
