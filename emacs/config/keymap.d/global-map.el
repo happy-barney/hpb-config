@@ -25,6 +25,7 @@
 (define-key global-map (kbd "C-<f11>"              ) 'execute-extended-command)
 (define-key global-map (kbd "C-;"               ) (lambda () (interactive) (insert ";")))
 (define-key global-map (kbd "C-."               ) 'undo)
+(define-key global-map (kbd "C-_"               ) 'undo)
 (define-key global-map (kbd "<backtab>"         ) 'indent-relative)
 (define-key global-map (kbd "C-<tab>"           ) 'dabbrev-expand)
 (define-key global-map (kbd "C-c <tab>"         ) 'indent-to-column)
@@ -89,6 +90,7 @@
 (define-key projectile-command-map (kbd "F") nil)
 (define-key projectile-command-map (kbd "F p") 'projectile-find-file-in-known-projects)
 (define-key projectile-command-map (kbd "F h") 'helm-projectile-find-file-in-known-projects)
+(define-key projectile-command-map (kbd "? p") 'helm-perldoc)
 
 (require 'whitespace)
 (define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
