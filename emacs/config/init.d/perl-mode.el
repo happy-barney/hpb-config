@@ -42,6 +42,7 @@
       )
 
 (require 'hpb-perl-find-other-file)
+(require 'hpb-perl-find-related-file)
 (hpb-define-key cperl-mode-map
                 '(
                   ("C-c ?" . 'cperl-find-bad-style)
@@ -51,6 +52,7 @@
                   ("C-}"   . (lambda () (interactive) (insert "}")))
                   ("C-;"   . (lambda () (interactive) (insert ";")))
 		  ("C-c o f" . 'hpb-perl-find-other-file)
+		  ("C-c t t" . 'hpb-perl-find-related-file)
                   ))
 
 ;;; Hooks
