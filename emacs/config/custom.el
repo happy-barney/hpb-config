@@ -115,6 +115,7 @@
  '(user-mail-address "happy.barney@gmail.com")
  '(version-control t)
  '(web-mode-markup-indent-offset 2)
+ '(whitespace-line-column nil)
  '(xsl-element-indent-step 2)
  '(yas-snippet-dirs "~/.cache/emacs/yasnippet/snippets" nil (yasnippet)))
 (custom-set-faces
