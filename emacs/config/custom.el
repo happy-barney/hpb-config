@@ -78,6 +78,7 @@
  '(org-clock-into-drawer t)
  '(org-clock-persist (quote history))
  '(org-log-done (quote note))
+ '(org-time-stamp-custom-formats (quote ("<%Y-%m-%d>" . "<%Y-%m-%d %a %H:%M>")))
  '(org-todo-interpretation (quote sequence))
  '(org-todo-keywords (quote ((sequence "TODO" "DONE"))))
  '(paren-mode (quote sexp) nil (paren))
