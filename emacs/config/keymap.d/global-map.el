@@ -21,6 +21,9 @@
 (define-key global-map (kbd "C-x m . E") 'magit-ediff-stage)
 (define-key global-map (kbd "C-x m . l") 'magit-log-buffer-file)
 (define-key global-map (kbd "C-x m . y") 'magit-show-refs-popup)
+(define-key global-map (kbd "C-<f9>") 'magit-blame)
+(define-key global-map (kbd "C-<f8>") 'magit-blame-quit)
+(define-key global-map (kbd "C-<f12>") 'hpb-magit-stage-current-buffer)
 
 (define-key global-map (kbd "C-<f11>"              ) 'execute-extended-command)
 (define-key global-map (kbd "C-;"               ) (lambda () (interactive) (insert ";")))
