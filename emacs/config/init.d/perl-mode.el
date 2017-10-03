@@ -53,10 +53,21 @@
                   ("C-;"   . (lambda () (interactive) (insert ";")))
 		  ("C-c o f" . 'hpb-perl-find-other-file)
 		  ("C-c t t" . 'hpb-perl-find-related-file)
+                  ("C-c C-c" . 'recompile)
                   ))
+
+(setq perl-perlbrew-with "gdc-el6@up-to-date")
+
+(defun hpb/perl-mode/set-compile-command ()
+  (interactive)
+  (make-local-variable 'compile-command)
+  (setq compile-command
+        (concat "perlbrew exec --with " perl-perlbrew-with " perl " buffer-file-name)
+  ))
 
 ;;; Hooks
 (add-hook 'cperl-mode-hook 'hpb-hook-newline-and-indent)
 (add-hook 'cperl-mode-hook 'hpb-hook-enable-index)
 (add-hook 'cperl-mode-hook 'hpb-hook-cperl-mode)
+(add-hook 'cperl-mode-hook 'hpb/perl-mode/set-compile-command)
 

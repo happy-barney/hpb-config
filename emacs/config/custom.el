@@ -24,6 +24,7 @@
  '(column-number-mode t)
  '(completions-format (quote vertical))
  '(complex-buffers-menu-p nil)
+ '(copyright-year-ranges t)
  '(cperl-auto-newline t)
  '(cperl-auto-newline-after-colon nil)
  '(cperl-close-paren-offset -4)
@@ -90,6 +91,10 @@
  '(ps-print-color-p nil)
  '(query-user-mail-address nil)
  '(recent-files-permanent-submenu t)
+ '(safe-local-variable-values
+   (quote
+    ((perl-perlbrew-with . "perl-5.12.5-threads@grammar-parser")
+     (perl-perlbrew-with . "gdc-el6@up-to-date"))))
  '(save-abbrevs t)
  '(save-some-buffers-query-display-buffer nil)
  '(server-raise-frame nil)

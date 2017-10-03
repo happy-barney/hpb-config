@@ -31,3 +31,5 @@
  "~/.config/emacs-local/keymap.d/"      ; local keybindings
  )
 
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

@@ -3,7 +3,8 @@
 # key: package
 # binding: C-c + i p
 # --
-
+${5:# Copyright © 2017, GoodData® Corporation. All rights reserved.
+}
 ${4:use v5.10;
 }use strict;
 use warnings;

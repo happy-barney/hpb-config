@@ -10,9 +10,14 @@
         (search-token (member token lookup-path))
         )
     (if search-token (hpb-firstn-as-path(- (length lookup-path) (length search-token)) lookup-path)
-      (let ((search-lib (member "lib" lookup-path)))
-        (if search-lib (hpb-firstn-as-path(- (length lookup-path) (length search-lib)) lookup-path))
-        ))
+      (let ((search-lib (member "lib" lookup-path))
+            (search-t (member "t" lookup-path))
+            )
+        (cond
+         (search-lib (hpb-firstn-as-path(- (length lookup-path) (length search-lib)) lookup-path))
+         (search-t   (concat (hpb-firstn-as-path (- (length lookup-path) (- (length search-lib) 1)) lookup-path) "/lib"))
+         (lookup-path)
+         )))
     ))
 
 (provide 'hpb-perl-guess-root-for)
