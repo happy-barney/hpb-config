@@ -71,6 +71,9 @@
  '(kept-old-versions 4)
  '(lazy-lock-stealth-lines 1000)
  '(line-number-mode t)
+ '(magit-visit-ref-behavior
+   (quote
+    (focus-on-ref create-branch checkout-any checkout-branch)))
  '(make-backup-files t)
  '(mouse-buffer-menu-mode-mult 0)
  '(mouse-yank-at-point t)
