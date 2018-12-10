@@ -29,8 +29,11 @@
          (last-part (nth (+ -1 (safe-length parts)) parts))
          (path-with-ext (replace-regexp-in-string "\\.pm$" ".t" last-part))
          (path-with-dash (replace-regexp-in-string "/" "-" path-with-ext))
+         (prefix (concat (s-join "/lib/" (butlast parts)) "/t/"))
+         (full-path-with-ext (concat prefix path-with-ext))
+         (full-path-with-dash (concat prefix path-with-dash))
          )
-    (concat (s-join "/lib/" (butlast parts)) "/t/" path-with-dash)
+    (if (file-exists-p full-path-with-ext) full-path-with-ext full-path-with-dash)
     ))
 
 (defun hpb-perl-make-play-file-path (path)

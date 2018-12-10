@@ -6,7 +6,7 @@ export SHELL HOME
 export ignoreeof=5
 export PAGER=less
 export HOSTFILE=
-export LS_OPTIONS='--color=tty -F'
+export LS_OPTIONS='--color=tty -F -N'
 
 # Local Variables:
 # mode: sh

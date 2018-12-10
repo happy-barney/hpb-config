@@ -9,7 +9,10 @@
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
 (define-key global-map (kbd "C-x m g") 'magit-status)
+(define-key global-map (kbd "C-x m g") 'magit-status)
+(define-key global-map (kbd "C-x m b") 'magit-branch-popup)
 (define-key global-map (kbd "C-x m y") 'magit-show-refs-popup)
+(define-key global-map (kbd "C-x m z") 'magit-stash-popup)
 (define-key global-map (kbd "C-x m s t") 'magit-status)
 (define-key global-map (kbd "C-x m c o") 'magit-checkout)
 (define-key global-map (kbd "C-x m f f") 'magit-find-file)
@@ -21,6 +24,7 @@
 (define-key global-map (kbd "C-x m . E") 'magit-ediff-stage)
 (define-key global-map (kbd "C-x m . l") 'magit-log-buffer-file)
 (define-key global-map (kbd "C-x m . y") 'magit-show-refs-popup)
+(define-key global-map (kbd "C-x m . z") 'magit-stash-popup)
 (define-key global-map (kbd "C-<f9>") 'magit-blame)
 (define-key global-map (kbd "C-<f8>") 'magit-blame-quit)
 (define-key global-map (kbd "C-<f12>") 'hpb-magit-stage-current-buffer)
@@ -49,8 +53,8 @@
 
 (define-key global-map (kbd   "<f1>"           ) 'help-command)
 (define-key global-map (kbd   "<f2>"           ) 'save-buffer)
+(define-key global-map (kbd   "C-<f2>"           ) 'copyright-update)
 (define-key global-map (kbd "S-<f2>"           ) 'save-some-buffers)
-(define-key global-map (kbd "C-<f2>"           ) 'write-buffer)
 (define-key global-map (kbd   "<f3>"           ) 'find-file)
 (define-key global-map (kbd "S-<f3>"           ) 'find-file-at-point)
 (define-key global-map (kbd "C-<f3>"           ) 'find-file-at-point)
@@ -103,3 +107,4 @@
 
 (require 'puppet-mode)
 (define-key puppet-mode-map (kbd "C-c + i p") (lambda () (interactive) (insert (hpb-puppet-guess-manifest-name))))
+
