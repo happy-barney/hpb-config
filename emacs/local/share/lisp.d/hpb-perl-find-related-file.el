@@ -3,10 +3,10 @@
 (require 'ert)
 (require 's)
 
-(defun hpb-perl-guess-test-or-implementation-path (path)
+(defun hpb-perl-guess-test-or-implementation-path (path force-dash)
   (cond
    ((hpb-perl-looks-like-test-file-p path) (hpb-perl-make-play-file-path path))
-   ((hpb-perl-looks-like-play-file-p path) (hpb-perl-make-test-file-path path))
+   ((hpb-perl-looks-like-play-file-p path) (hpb-perl-make-test-file-path path force-dash))
    (t nil)
   ))
 
@@ -24,7 +24,7 @@
    (t t)
    ))
 
-(defun hpb-perl-make-test-file-path (path)
+(defun hpb-perl-make-test-file-path (path force-dash)
   (let* ((parts (s-split "/lib/" path))
          (last-part (nth (+ -1 (safe-length parts)) parts))
          (path-with-ext (replace-regexp-in-string "\\.pm$" ".t" last-part))
@@ -33,7 +33,11 @@
          (full-path-with-ext (concat prefix path-with-ext))
          (full-path-with-dash (concat prefix path-with-dash))
          )
-    (if (file-exists-p full-path-with-ext) full-path-with-ext full-path-with-dash)
+    (cond
+     (force-dash full-path-with-dash)
+     ((file-exists-p full-path-with-ext) full-path-with-ext)
+     (t full-path-with-dash)
+     )
     ))
 
 (defun hpb-perl-make-play-file-path (path)
@@ -45,10 +49,10 @@
     (concat (s-join "/lib/" (append (butlast parts) (list path-with-slash))))
     ))
 
-(defun hpb-perl-find-related-file (&optional path)
-  (interactive)
-  (let* ((file-path (if path path (buffer-file-name)))
-        (other-path (hpb-perl-guess-test-or-implementation-path file-path)))
+(defun hpb-perl-find-related-file (&optional force-dash)
+  (interactive "P")
+  (let* ((file-path (buffer-file-name))
+        (other-path (hpb-perl-guess-test-or-implementation-path file-path force-dash)))
     (if other-path (find-file other-path))
 ))
 
