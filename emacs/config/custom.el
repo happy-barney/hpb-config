@@ -55,6 +55,7 @@
  '(font-lock-use-colors t)
  '(font-lock-use-fonts nil)
  '(font-menu-ignore-scaled-fonts nil t)
+ '(font-use-system-font t)
  '(fume-max-items 35)
  '(fume-perl-fully-qualified-names nil)
  '(global-undo-tree-mode nil)
@@ -71,6 +72,12 @@
  '(kept-old-versions 4)
  '(lazy-lock-stealth-lines 1000)
  '(line-number-mode t)
+ '(magit-repository-directories
+   (quote
+    (("~/git/github" . 1)
+     ("~/git/fork" . 1)
+     ("~/git/foreign" . 1))))
+ '(magit-save-repository-buffers (quote dontask))
  '(magit-visit-ref-behavior
    (quote
     (focus-on-ref create-branch checkout-any checkout-branch)))
@@ -82,9 +89,13 @@
  '(org-clock-into-drawer t)
  '(org-clock-persist (quote history))
  '(org-log-done (quote note))
+ '(org-startup-folded (quote showeverything))
  '(org-time-stamp-custom-formats (quote ("<%Y-%m-%d>" . "<%Y-%m-%d %a %H:%M>")))
  '(org-todo-interpretation (quote sequence))
- '(org-todo-keywords (quote ((sequence "TODO" "DONE"))))
+ '(org-todo-keywords (quote ((sequence "TODO" "IN PROGRESS" "DONE"))))
+ '(package-selected-packages
+   (quote
+    (docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
  '(paren-mode (quote sexp) nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator (quote arrow-fade))
@@ -94,10 +105,7 @@
  '(ps-print-color-p nil)
  '(query-user-mail-address nil)
  '(recent-files-permanent-submenu t)
- '(safe-local-variable-values
-   (quote
-    ((perl-perlbrew-with . "perl-5.12.5-threads@grammar-parser")
-     (perl-perlbrew-with . "gdc-el6@up-to-date"))))
+ '(safe-local-variable-values (quote ((c-indentation-style . bsd))))
  '(save-abbrevs t)
  '(save-some-buffers-query-display-buffer nil)
  '(server-raise-frame nil)
@@ -126,7 +134,7 @@
  '(web-mode-markup-indent-offset 2)
  '(whitespace-line-column nil)
  '(xsl-element-indent-step 2)
- '(yas-snippet-dirs "~/.cache/emacs/yasnippet/snippets" nil (yasnippet)))
+ '(yas-snippet-dirs "~/.cache/emacs/yasnippet/snippets"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

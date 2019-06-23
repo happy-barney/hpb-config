@@ -108,3 +108,7 @@
 (require 'puppet-mode)
 (define-key puppet-mode-map (kbd "C-c + i p") (lambda () (interactive) (insert (hpb-puppet-guess-manifest-name))))
 
+(define-key cperl-mode-map (kbd "C-c + i n") (lambda () (interactive) (insert (hpb-perl-guess-package-name))))
+
+(require 'projectile)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
