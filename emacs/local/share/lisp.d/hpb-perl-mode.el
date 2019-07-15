@@ -55,7 +55,7 @@
      ;; skip multiline strings
      ((string= syntax-type "string") 999)
      ((string= face "font-lock-string-face") 999)
-     ((string= syntax-type "pod") 999)
+     ((and (eq syntax-type 'pod) (not (eq ?= (char-after (point)))) 999))
      (t
       (looking-at outline-regexp)
       (let ( (match (match-string 2))
@@ -68,13 +68,14 @@
     )))
 
 (defun hpb-hook-cperl-mode ()
+  (interactive)
+
   (outline-minor-mode t)
 
   (setq outline-regexp        hpb-perl-outline-regexp)
   (setq outline-level        'hpb-perl-outline-level)
 
   (hpb-local-load-config "cperl-mode")
-
 )
 
 ;; *******************************************************************
