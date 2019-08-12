@@ -111,7 +111,7 @@
 (define-key cperl-mode-map (kbd "C-c + i n") (lambda () (interactive) (insert (hpb-perl-guess-package-name))))
 
 (require 'projectile)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key global-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'string-inflection)
 (define-key global-map (kbd "C-c i i") 'string-inflection-all-cycle)
