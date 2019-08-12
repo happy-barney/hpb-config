@@ -67,7 +67,7 @@
  '(html-helper-use-expert-menu t)
  '(html-helper-user-menu nil)
  '(imenu-sort-function (quote imenu--sort-by-name))
- '(indent-tabs-mode nil)
+ '(indent-tabs-mode t)
  '(kept-new-versions 4)
  '(kept-old-versions 4)
  '(lazy-lock-stealth-lines 1000)
