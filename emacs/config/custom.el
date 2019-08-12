@@ -152,7 +152,7 @@
  '(font-lock-function-name-face ((((class color)) (:foreground "blue2"))))
  '(font-lock-keyword-face ((((class color) (background light)) (:foreground "brown" :size "14pt" :family "Dejavu Sans Mono" :italic nil :bold nil))))
  '(font-lock-type-face ((((class color) (background light)) (:foreground "blue4"))))
- '(helm-moccur-buffer ((t (:foreground "cyan" :underline t))))
+ '(helm-moccur-buffer ((t (:foreground "cyan4" :underline t))))
  '(html-helper-significant-tag-face ((t (:foreground "firebrick"))))
  '(powerline-active1 ((t (:inherit mode-line))))
  '(powerline-active2 ((t (:inherit mode-line))))
