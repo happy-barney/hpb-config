@@ -123,7 +123,7 @@
  '(speedbar-navigating-speed 2 t)
  '(speedbar-update-speed 2 t)
  '(tab-stop-list (quote (4 8)))
- '(tab-width 8)
+ '(tab-width 4)
  '(tags-case-fold-search nil)
  '(toolbar-visible-p nil)
  '(track-eol nil)
