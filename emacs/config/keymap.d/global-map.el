@@ -45,6 +45,10 @@
 (define-key global-map (kbd "C-c C-<right>"       ) 'show-subtree)
 (define-key global-map (kbd "C-c C-<up>"          ) (lambda () (interactive) (hide-subtree) (show-children)))
 (define-key global-map (kbd "C-c C-<down>"        ) 'show-children)
+(define-key global-map (kbd "C-c <prior>"       ) 'outline-up-heading)
+(define-key global-map (kbd "C-c C-<prior>"       ) 'outline-up-heading)
+(define-key global-map (kbd "C-c <home>"         ) (lambda () (interactive) (outline-up-heading 9)))
+(define-key global-map (kbd "C-c C-<home>"       ) (lambda () (interactive) (outline-up-heading 9)))
 (define-key global-map (kbd "DEL"               ) 'viper-delete-char)
 (define-key global-map (kbd "<insert>"          ) 'ignore)
 
@@ -60,7 +64,7 @@
 (define-key global-map (kbd "C-<f3>"           ) 'find-file-at-point)
 (define-key global-map (kbd   "<f4>"           ) 'revert-buffer)
 (define-key global-map (kbd "S-<f4>"           ) 'make-frame)
-(define-key global-map (kbd "C-<f4>"           ) 'delete-frame)
+(define-key global-map (kbd "C-<f4>"           ) nil)
 (define-key global-map (kbd   "<f5>"           ) 'switch-to-buffer)
 (define-key global-map (kbd "S-<f5>"           ) 'switch-to-buffer-other-frame)
 (define-key global-map (kbd   "<f6>"           ) 'other-window)
@@ -105,15 +109,23 @@
 (require 'whitespace)
 (define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
 
-(require 'puppet-mode)
-(define-key puppet-mode-map (kbd "C-c + i p") (lambda () (interactive) (insert (hpb-puppet-guess-manifest-name))))
-
-(define-key cperl-mode-map (kbd "C-c + i n") (lambda () (interactive) (insert (hpb-perl-guess-package-name))))
-
 (require 'projectile)
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'string-inflection)
 (define-key global-map (kbd "C-c i i") 'string-inflection-all-cycle)
 (define-key global-map (kbd "C-c i k") 'string-inflection-kebab-case)
+(define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
 (define-key global-map (kbd "C-c i %") 'toggle-parens)
+(define-key global-map (kbd "C-c i (") 'toggle-parens-set-parens)
+(define-key global-map (kbd "C-c i )") 'toggle-parens-set-parens)
+(define-key global-map (kbd "C-c i 0") 'toggle-parens-set-parens)
+(define-key global-map (kbd "C-c i 9") 'toggle-parens-set-parens)
+
+(require 'evil-numbers)
+(define-key global-map (kbd "C-c n +") 'evil-numbers/inc-at-pt)
+(define-key global-map (kbd "C-c n -") 'evil-numbers/dec-at-pt)
+(define-key global-map (kbd "C-c n a") 'evil-numbers/inc-at-pt)
+(define-key global-map (kbd "C-c n z") 'evil-numbers/dec-at-pt)
+(define-key global-map (kbd "C-c n i") 'evil-numbers/inc-at-pt)
+(define-key global-map (kbd "C-c n d") 'evil-numbers/dec-at-pt)
