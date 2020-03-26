@@ -81,8 +81,10 @@
 
 (define-key global-map (kbd "C-x <left>"   ) 'previous-buffer)
 (define-key global-map (kbd "C-x C-<left>" ) 'previous-buffer)
+(define-key global-map (kbd "<mouse-8>" ) 'previous-buffer)
 (define-key global-map (kbd "C-x <right>"  ) 'next-buffer)
 (define-key global-map (kbd "C-x C-<right>") 'next-buffer)
+(define-key global-map (kbd "<mouse-9>") 'next-buffer)
 
 (define-key global-map (kbd "C-c o f") 'ff-find-other-file)
 (define-key global-map (kbd "<down-mouse-3>"         ) 'mouse-buffer-menu)
