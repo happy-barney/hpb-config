@@ -16,11 +16,12 @@
  '(c-basic-offset 4)
  '(c-offsets-alist
    (quote
-    ((arglist-cont-nonempty . +)
-     (substatement-open . 0)
-     (arglist-intro . +)
-     (arglist-close . 0)
-     (case-label . +))))
+	((arglist-cont-nonempty . +)
+	 (substatement-open . 0)
+	 (arglist-intro . +)
+	 (arglist-close . 0)
+	 (case-label . +))))
+ '(case-fold-search t)
  '(column-number-mode t)
  '(completions-format (quote vertical))
  '(complex-buffers-menu-p nil)
@@ -74,13 +75,13 @@
  '(line-number-mode t)
  '(magit-repository-directories
    (quote
-    (("~/git/github" . 1)
-     ("~/git/fork" . 1)
-     ("~/git/foreign" . 1))))
+	(("~/git/github" . 1)
+	 ("~/git/fork" . 1)
+	 ("~/git/foreign" . 1))))
  '(magit-save-repository-buffers (quote dontask))
  '(magit-visit-ref-behavior
    (quote
-    (focus-on-ref create-branch checkout-any checkout-branch)))
+	(focus-on-ref create-branch checkout-any checkout-branch)))
  '(make-backup-files t)
  '(mouse-buffer-menu-mode-mult 0)
  '(mouse-yank-at-point t)
@@ -95,7 +96,7 @@
  '(org-todo-keywords (quote ((sequence "TODO" "IN PROGRESS" "DONE"))))
  '(package-selected-packages
    (quote
-    (docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
+	(evil-numbers docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
  '(paren-mode (quote sexp) nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator (quote arrow-fade))
@@ -105,7 +106,10 @@
  '(ps-print-color-p nil)
  '(query-user-mail-address nil)
  '(recent-files-permanent-submenu t)
- '(safe-local-variable-values (quote ((c-indentation-style . bsd))))
+ '(safe-local-variable-values
+   (quote
+	((cperl-indent-level 4)
+	 (c-indentation-style . bsd))))
  '(save-abbrevs t)
  '(save-some-buffers-query-display-buffer nil)
  '(server-raise-frame nil)
