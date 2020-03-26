@@ -1,8 +1,10 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 ;;; Path to my lisp repository
+(add-to-list 'load-path "~/.local/share/emacs/advice.d/")
 (add-to-list 'load-path "~/.local/share/emacs/lisp.d/")
 (add-to-list 'load-path "~/.local/share/emacs/functions.d/")
+(add-to-list 'load-path "~/.local/share/emacs-local/advice.d/")
 (add-to-list 'load-path "~/.local/share/emacs-local/lisp.d/")
 (add-to-list 'load-path "~/.local/share/emacs-local/functions.d/")
 
