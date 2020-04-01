@@ -138,7 +138,7 @@
  '(web-mode-markup-indent-offset 2)
  '(whitespace-line-column nil)
  '(xsl-element-indent-step 2)
- '(yas-snippet-dirs "~/.cache/emacs/yasnippet/snippets"))
+ '(yas-snippet-dirs '("~/.cache/emacs/yasnippet/snippets")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
