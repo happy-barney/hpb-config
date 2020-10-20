@@ -67,6 +67,7 @@
 (define-key global-map (kbd "C-<f4>"           ) nil)
 (define-key global-map (kbd   "<f5>"           ) 'switch-to-buffer)
 (define-key global-map (kbd "S-<f5>"           ) 'switch-to-buffer-other-frame)
+(define-key global-map (kbd "C-<f5>"           ) (lambda () (interactive) (if (projectile-project-root) (projectile-switch-to-buffer) (switch-to-buffer))))
 (define-key global-map (kbd   "<f6>"           ) 'other-window)
 (define-key global-map (kbd   "<f7>"           ) nil)
 (define-key global-map (kbd   "<f8>"           ) 'recenter)
