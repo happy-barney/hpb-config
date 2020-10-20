@@ -26,6 +26,8 @@
     "=head3"
     "=item"
     "=over"
+    "=back"
+	"=pod"
     ))
 
 (defconst hpb-perl-outline-regexp
@@ -43,25 +45,68 @@
    "\\b"                                ; Word boundary
    ))
 
+(defun hpb-perl-insignificant-pod ()
+  (and
+   (eq major-mode 'cperl-mode)
+   (get-char-property (point) 'in-pod)
+   (not (eq ?= (char-after (point))))
+   )
+)
+
+(defun hpb-perl-advice-outline-next-heading (orig-fun &rest args)
+  (interactive)
+
+  (apply orig-fun args) ;(outline-next-heading)
+
+  (while (hpb-perl-insignificant-pod)
+	(apply orig-fun args) ;(outline-next-heading)
+	)
+  )
+
+(defun hpb-perl-advice-outline-previous-heading (orig-fun &rest args)
+  (interactive)
+
+  (apply orig-fun args) ;(outline-next-heading)
+
+  (while (hpb-perl-insignificant-pod)
+	(apply orig-fun args) ;(outline-next-heading)
+	)
+  )
+
+(advice-add 'outline-next-heading :around #'hpb-perl-advice-outline-next-heading)
+(advice-add 'outline-previous-heading :around #'hpb-perl-advice-outline-previous-heading)
+
 ;;; Functions
 (defun hpb-perl-outline-level ()
   (let ((syntax-type (get-char-property (point) 'syntax-type))
+        (in-pod      (get-char-property (point) 'in-pod))
         (face        (get-char-property (point) 'face))
         )
     (cond
      ;; skip HERE-DOCS
+     ((string= syntax-type "here-doc") 999)
      ((string= syntax-type "here-doc") 999)
      ((string= syntax-type "here-doc-delim") 999)
      ;; skip multiline strings
      ((string= syntax-type "string") 999)
      ((string= face "font-lock-string-face") 999)
      ((and (eq syntax-type 'pod) (not (eq ?= (char-after (point)))) 999))
+     ((and (eq syntax-type "pod") (not (eq ?= (char-after (point)))) 999))
+     ((and in-pod (not (eq ?= (char-after (point)))) 999))
      (t
       (looking-at outline-regexp)
       (let ( (match (match-string 2))
              (indent (match-string 1))
              )
         (cond
+		 ((string= match "=pod")   0); (string-width "\t"))
+		 ((string= match "=head1") 1); (string-width "\t"))
+		 ((string= match "=head2") 2); (string-width "\t\t"))
+		 ((string= match "=head3") 3); (string-width "\t\t\t"))
+		 ((string= match "=over")  4); (string-width "\t\t\t\t"))
+		 ((string= match "=back")  4); (string-width "\t\t\t\t"))
+		 ((string= match "=item")  5); (string-width "\t\t\t\t\t"))
+		 (in-pod  999)
          (match (string-width indent))
          (t 999)
          )))
