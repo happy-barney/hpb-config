@@ -2,7 +2,7 @@
 
 (require 'hpb-c-mode)
 (require 'hpb-hook-newline-and-indent)
-(require 'hpb-hook-enable-semantic)
+;(require 'hpb-hook-enable-semantic)
 (require 'hpb-hook-enable-index)
 
 ;;; Registry mode
@@ -24,6 +24,7 @@
      (arglist-intro         . +)
      (arglist-close         . 0)
      (case-label            . +)
+     (brace-list-intro      . +)
      ))
 )
 
@@ -44,6 +45,6 @@
 (add-hook 'c-mode-common-hook 'hpb-hook-c-mode-common)
 
 (add-hook 'c-mode-hook        'hpb-hook-c-mode)
-(add-hook 'c-mode-hook        'hpb-hook-enable-semantic)
+;(add-hook 'c-mode-hook        'hpb-hook-enable-semantic)
 (add-hook 'c-mode-hook        'hpb-hook-enable-index)
 

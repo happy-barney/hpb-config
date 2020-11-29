@@ -7,19 +7,7 @@
 
 ;;; Variables
 (defconst hpb-c-mode-outline-regexp
-  (concat
-                                        ; Beginning line
-   "^"
-   (hpb-join "\\|"
-             '(
-                                        ; identifier or directive
-               "\\(#?[a-zA-Z_]\\)"
-                                        ; comment start but not doxygen continuation comment
-               "\\(/\\)[*/][^!*/]"
-               "\\(/\\)[*/][!*/][^<]"
-               )
-             )
-   )
+   "^\\([ \t]*[#a-zA-Z0-9.#/.]\\)"
   "Customized outline regexp"
   )
 
@@ -27,12 +15,7 @@
 (defun hpb-c-mode-outline-level ()
   "Calculate outline level"
   (interactive)
-  (cond ((looking-at "[a-zA-Z_]") 1)
-        ((looking-at "#[^ ]"   ) 1)
-        ((looking-at "#   define") 1)
-        ((looking-at "/\\*\\*$") 1)
-        ((looking-at "\\(/\\)[*/][^!*/]") 2)
-        ((looking-at "\\(/\\)[*/][!*/][^<]") 2)
+  (cond ((looking-at "^\\([ 	]*[^a-zA-Z0-9/.#]\\)" ) (string-width (match-string 1)))
         (t 999)
         ))
 

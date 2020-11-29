@@ -14,13 +14,16 @@
  '(c-auto-align-backslashes t)
  '(c-backslash-column 72)
  '(c-basic-offset 4)
+ '(c-label-minimum-indentation 0)
  '(c-offsets-alist
    (quote
-	((arglist-cont-nonempty . +)
+	((brace-list-intro . +)
+	 (brace-list-entry . +)
 	 (substatement-open . 0)
+	 (case-label . +)
 	 (arglist-intro . +)
-	 (arglist-close . 0)
-	 (case-label . +))))
+	 (arglist-cont-nonempty . +)
+	 (arglist-close . 0))))
  '(case-fold-search t)
  '(column-number-mode t)
  '(completions-format (quote vertical))
@@ -73,6 +76,7 @@
  '(kept-old-versions 4)
  '(lazy-lock-stealth-lines 1000)
  '(line-number-mode t)
+ '(magit-log-margin (quote (t "%Y-%m-%d %H:%M " magit-log-margin-width t 18)))
  '(magit-repository-directories
    (quote
 	(("~/git/github" . 1)
@@ -83,20 +87,24 @@
    (quote
 	(focus-on-ref create-branch checkout-any checkout-branch)))
  '(make-backup-files t)
- '(mouse-buffer-menu-mode-mult 0)
+ '(mouse-buffer-menu-mode-mult 1)
  '(mouse-yank-at-point t)
  '(next-line-add-newlines t)
  '(org-clock-in-switch-to-state nil)
  '(org-clock-into-drawer t)
  '(org-clock-persist (quote history))
+ '(org-enforce-todo-dependencies t)
+ '(org-hierarchical-todo-statistics nil)
  '(org-log-done (quote note))
+ '(org-provide-todo-statistics (quote all-headlines))
  '(org-startup-folded (quote showeverything))
  '(org-time-stamp-custom-formats (quote ("<%Y-%m-%d>" . "<%Y-%m-%d %a %H:%M>")))
  '(org-todo-interpretation (quote sequence))
- '(org-todo-keywords (quote ((sequence "TODO" "IN PROGRESS" "DONE"))))
+ '(org-todo-keyword-faces (quote (("IN-PROGRESS" . "dark violet"))))
+ '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "DONE"))))
  '(package-selected-packages
    (quote
-	(evil-numbers docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
+	(lsp-java lsp-ui flycheck lsp-mode evil-numbers docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
  '(paren-mode (quote sexp) nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator (quote arrow-fade))
@@ -108,7 +116,159 @@
  '(recent-files-permanent-submenu t)
  '(safe-local-variable-values
    (quote
-	((cperl-indent-level 4)
+	((fci-rule-column . 140)
+	 (c-comment-only-line-offset 0 . 0)
+	 (eval progn
+		   (defun my/point-in-defun-declaration-p nil
+			 (let
+				 ((bod
+				   (save-excursion
+					 (c-beginning-of-defun)
+					 (point))))
+			   (<= bod
+				   (point)
+				   (save-excursion
+					 (goto-char bod)
+					 (re-search-forward "{")
+					 (point)))))
+		   (defun my/is-string-concatenation-p nil "Returns true if the previous line is a string concatenation"
+				  (save-excursion
+					(let
+						((start
+						  (point)))
+					  (forward-line -1)
+					  (if
+						  (re-search-forward " \\+$" start t)
+						  t nil))))
+		   (defun my/inside-java-lambda-p nil "Returns true if point is the first statement inside of a lambda"
+				  (save-excursion
+					(c-beginning-of-statement-1)
+					(let
+						((start
+						  (point)))
+					  (forward-line -1)
+					  (if
+						  (search-forward " -> {" start t)
+						  t nil))))
+		   (defun my/trailing-paren-p nil "Returns true if point is a training paren and semicolon"
+				  (save-excursion
+					(end-of-line)
+					(let
+						((endpoint
+						  (point)))
+					  (beginning-of-line)
+					  (if
+						  (re-search-forward "[ ]*);$" endpoint t)
+						  t nil))))
+		   (defun my/prev-line-call-with-no-args-p nil "Return true if the previous line is a function call with no arguments"
+				  (save-excursion
+					(let
+						((start
+						  (point)))
+					  (forward-line -1)
+					  (if
+						  (re-search-forward ".($" start t)
+						  t nil))))
+		   (defun my/arglist-cont-nonempty-indentation
+			   (arg)
+			 (if
+				 (my/inside-java-lambda-p)
+				 (quote +)
+			   (if
+				   (my/is-string-concatenation-p)
+				   16
+				 (unless
+					 (my/point-in-defun-declaration-p)
+				   (quote ++)))))
+		   (defun my/statement-block-intro
+			   (arg)
+			 (if
+				 (and
+				  (c-at-statement-start-p)
+				  (my/inside-java-lambda-p))
+				 0
+			   (quote +)))
+		   (defun my/block-close
+			   (arg)
+			 (if
+				 (my/inside-java-lambda-p)
+				 (quote -)
+			   0))
+		   (defun my/arglist-close
+			   (arg)
+			 (if
+				 (my/trailing-paren-p)
+				 0
+			   (quote --)))
+		   (defun my/arglist-intro
+			   (arg)
+			 (if
+				 (my/prev-line-call-with-no-args-p)
+				 (quote ++)
+			   0))
+		   (c-set-offset
+			(quote inline-open)
+			0)
+		   (c-set-offset
+			(quote topmost-intro-cont)
+			(quote +))
+		   (c-set-offset
+			(quote statement-block-intro)
+			(quote my/statement-block-intro))
+		   (c-set-offset
+			(quote block-close)
+			(quote my/block-close))
+		   (c-set-offset
+			(quote knr-argdecl-intro)
+			(quote +))
+		   (c-set-offset
+			(quote substatement-open)
+			(quote +))
+		   (c-set-offset
+			(quote substatement-label)
+			(quote +))
+		   (c-set-offset
+			(quote case-label)
+			(quote +))
+		   (c-set-offset
+			(quote label)
+			(quote +))
+		   (c-set-offset
+			(quote statement-case-open)
+			(quote +))
+		   (c-set-offset
+			(quote statement-cont)
+			(quote ++))
+		   (c-set-offset
+			(quote arglist-intro)
+			(quote my/arglist-intro))
+		   (c-set-offset
+			(quote arglist-cont-nonempty)
+			(quote
+			 (my/arglist-cont-nonempty-indentation c-lineup-arglist)))
+		   (c-set-offset
+			(quote arglist-close)
+			(quote my/arglist-close))
+		   (c-set-offset
+			(quote inexpr-class)
+			0)
+		   (c-set-offset
+			(quote access-label)
+			0)
+		   (c-set-offset
+			(quote inher-intro)
+			(quote ++))
+		   (c-set-offset
+			(quote inher-cont)
+			(quote ++))
+		   (c-set-offset
+			(quote brace-list-intro)
+			(quote +))
+		   (c-set-offset
+			(quote func-decl-cont)
+			(quote ++)))
+	 (projectile-project-test-cmd . "test-csi-java.sh")
+	 (cperl-indent-level 4)
 	 (c-indentation-style . bsd))))
  '(save-abbrevs t)
  '(save-some-buffers-query-display-buffer nil)
@@ -138,7 +298,7 @@
  '(web-mode-markup-indent-offset 2)
  '(whitespace-line-column nil)
  '(xsl-element-indent-step 2)
- '(yas-snippet-dirs '("~/.cache/emacs/yasnippet/snippets")))
+ '(yas-snippet-dirs (quote ("~/.cache/emacs/yasnippet/snippets"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

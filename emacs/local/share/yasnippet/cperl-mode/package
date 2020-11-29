@@ -2,11 +2,42 @@
 # name: package ... [version]
 # key: package
 # binding: C-c + i p
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-${4:use v5.10;
-}use strict;
+`""`
+use v5.14;
+use Syntax::Construct v1.8 qw[ package-version package-block ];
+
+use strict;
 use warnings;
 
-package ${1:`(hpb-perl-guess-package-name)`}${2: v${3:1.0.0}};
+package ${1:`(hpb-perl-guess-package-name)`} v${3:1.0.0} {
+	$0
 
-$0
+	1;
+};
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+$1
+
+=head1 SYNOPSIS
+
+=head1 DESCRIPTION
+
+=head1 AUTHOR
+
+Branislav Zahradník <barney@cpan.org>
+
+=head1 COPYRIGHT
+
+This file is part of L<< Grammar::Parser >>.
+It can be distributed and/or modified under Artistic license 2.0
+
+=cut
