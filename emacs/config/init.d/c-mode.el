@@ -15,17 +15,17 @@
 
 ;;; Mode specific customization
 (custom-set-variables
- '(c-auto-align-backslashes t)
- '(c-backslash-column 72)
- '(c-basic-offset     4)
- '(c-offsets-alist
-   '((arglist-cont-nonempty . +)
-     (substatement-open     . 0)
-     (arglist-intro         . +)
-     (arglist-close         . 0)
-     (case-label            . +)
-     (brace-list-intro      . +)
-     ))
+ ;; '(c-auto-align-backslashes t)
+ ;; '(c-backslash-column 72)
+ ;; '(c-basic-offset     4)
+ ;; '(c-offsets-alist
+ ;;   '((arglist-cont-nonempty . +)
+ ;;     (substatement-open     . 0)
+ ;;     (arglist-intro         . +)
+ ;;     (arglist-close         . 0)
+ ;;     (case-label            . +)
+ ;;     (brace-list-intro      . +)
+ ;;     ))
 )
 
 ;;; Registry hooks

@@ -7,15 +7,29 @@
 
 ;;; Variables
 (defconst hpb-c-mode-outline-regexp
-   "^\\([ \t]*[#a-zA-Z0-9.#/.]\\)"
-  "Customized outline regexp"
+   "^[ \t]*[#a-zA-Z0-9./]"
+   "Customized outline regexp"
   )
+
+(defun hpb-c-mode-debug-current-outline-level ()
+  (interactive)
+
+  (message (concat
+			"Level: "
+			(number-to-string (hpb-c-mode-outline-level))
+			"; [1] " (match-string 1)
+			"; [2] " (match-string 2)
+			"; [3] " (match-string 3)
+			)
+		   ))
 
 ;;; Functions
 (defun hpb-c-mode-outline-level ()
   "Calculate outline level"
   (interactive)
-  (cond ((looking-at "^\\([ 	]*[^a-zA-Z0-9/.#]\\)" ) (string-width (match-string 1)))
+  (looking-at "^\\([ \t]*\\)\\([^a-zA-Z0-9/.#]\\)?\\(.\\)?" )
+  (cond ((match-string 2) 999)
+		((match-string 3) (string-width (match-string 1)))
         (t 999)
         ))
 

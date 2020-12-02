@@ -7,7 +7,7 @@
 
 ;; indent
 (c-set-offset 'brace-list-intro 4)
-;(c-set-offset 'substatement-open 0)
-;(c-set-offset 'arglist-intro 4)
-;(c-set-offset 'arglist-close 0)
-;(c-set-offset 'case-label 4)
+(c-set-offset 'substatement-open 0)
+(c-set-offset 'arglist-intro 4)
+(c-set-offset 'arglist-close 0)
+(c-set-offset 'case-label 4)
