@@ -48,6 +48,7 @@
   (setq outline-regexp  hpb-c-mode-outline-regexp)
   (setq outline-level  'hpb-c-mode-outline-level)
 
+  (c-toggle-electric-state -1)
   (hpb-local-load-config "c-mode")
   )
 
