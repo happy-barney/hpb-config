@@ -272,6 +272,7 @@
 	 (c-indentation-style . bsd))))
  '(save-abbrevs t)
  '(save-some-buffers-query-display-buffer nil)
+ '(scroll-margin 3)
  '(server-raise-frame nil)
  '(sgml-auto-insert-required-elements nil)
  '(sgml-default-doctype-name "HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"")
