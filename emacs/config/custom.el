@@ -96,6 +96,7 @@
  '(org-enforce-todo-dependencies t)
  '(org-hierarchical-todo-statistics nil)
  '(org-log-done (quote note))
+ '(org-lowest-priority 68)
  '(org-provide-todo-statistics (quote all-headlines))
  '(org-startup-folded (quote showeverything))
  '(org-time-stamp-custom-formats (quote ("<%Y-%m-%d>" . "<%Y-%m-%d %a %H:%M>")))
