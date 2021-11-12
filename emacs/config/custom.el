@@ -294,6 +294,7 @@
  '(toolbar-visible-p nil)
  '(track-eol nil)
  '(truncate-lines t)
+ '(typescript-indent-level 2)
  '(user-full-name "Brano Zahradnik")
  '(user-mail-address "happy.barney@gmail.com")
  '(version-control t)
