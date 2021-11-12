@@ -2,7 +2,8 @@
 unset PROMPT_COMMAND
 export PS1="\u@\h:\w\\\$ "
 
-alias dirpart_terminal_name='terminal_name "`basename \"\`dirname \\\"\\\`pwd\\\`\\\"\`\"`"/"`basename \"\`pwd\`\"`"'
+alias dirpart_terminal_name='terminal_name "$(basename "$(pwd)") @ $( basename "$(dirname "$(pwd)")")"'
+
 PROMPT_COMMAND=dirpart_terminal_name
 
 # Local Variables:

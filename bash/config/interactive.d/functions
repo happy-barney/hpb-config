@@ -1,7 +1,7 @@
 
 terminal_name ()
 {
-    echo -ne "\033]0; Terminal - $*\007"
+    echo -ne "\033]0; ${1:-Terminal}\007"
 }
 
 pod-ps ()
