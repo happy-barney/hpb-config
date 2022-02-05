@@ -7,7 +7,7 @@
   (interactive)
 
   (let* (
-        (candidate (thing-at-point 'symbol t))
+        (candidate (replace-regexp-in-string "::$" "" (thing-at-point 'symbol t)))
         (file (concat (replace-regexp-in-string "::" "/" candidate) ".pm"))
         (location (concat
                    (hpb-perl-guess-root-for file (buffer-file-name (current-buffer)))

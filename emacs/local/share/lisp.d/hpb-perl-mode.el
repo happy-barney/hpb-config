@@ -21,13 +21,13 @@
 ;;; Variables
 (defconst hpb-perl-outline-pod-list
   '(
-    "=head1"
-    "=head2"
-    "=head3"
-    "=item"
-    "=over"
-    "=back"
-	"=pod"
+    "=head1\\b"
+    "=head2\\b"
+    "=head3\\b"
+    "=item\\b"
+    "=over\\b"
+    "=back\\b"
+	"=pod\\b"
     ))
 
 (defconst hpb-perl-outline-regexp
@@ -38,11 +38,10 @@
    (hpb-join "\\|"
              (append
                hpb-perl-outline-pod-list
-               '("[a-z_]+" "1")
+               '("[a-zA-Z_]" "[\"'\\$;\\[\\}\\)]" "=>" "1")
                )
              )
    "\\)"                                ; end capture group \2
-   "\\b"                                ; Word boundary
    ))
 
 (defun hpb-perl-insignificant-pod ()
@@ -95,8 +94,9 @@
      ((and in-pod (not (eq ?= (char-after (point)))) 999))
      (t
       (looking-at outline-regexp)
-      (let ( (match (match-string 2))
-             (indent (match-string 1))
+      (let* ( (match (match-string 2))
+			  (indent (match-string 1))
+			  (indent-level (* 2 (string-width indent)))
              )
         (cond
 		 ((string= match "=pod")   0); (string-width "\t"))
@@ -107,7 +107,11 @@
 		 ((string= match "=back")  4); (string-width "\t\t\t\t"))
 		 ((string= match "=item")  5); (string-width "\t\t\t\t\t"))
 		 (in-pod  999)
-         (match (string-width indent))
+		 ((string= match "}") (+ indent-level 1))
+		 ((string= match ")") (+ indent-level 1))
+		 ((string= match "]") (+ indent-level 1))
+		 ((string= match ";") (+ indent-level 1))
+		 (match               indent-level)
          (t 999)
          )))
     )))

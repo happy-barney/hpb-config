@@ -13,12 +13,12 @@
 
 (defun hpb-perl-looks-like-test-file-p (path)
   "predicate: does it looks like test file?"
-  (string-match-p "/t/.*\.t$" path)
+  (string-match-p "/t/.*\\.t$" path)
   )
 
 (defun hpb-perl-looks-like-play-file-p (path)
   (cond
-   ((not (string-match-p "\.pm$" path)) nil)
+   ((not (string-match-p "\\.pm$" path)) nil)
    ((string-match-p "/t/" path) nil)
    ((not (string-match-p "/lib/" path)) nil)
    (t t)

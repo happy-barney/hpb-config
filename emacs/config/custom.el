@@ -90,6 +90,7 @@
  '(mouse-buffer-menu-mode-mult 1)
  '(mouse-yank-at-point t)
  '(next-line-add-newlines t)
+ '(nxml-child-indent 4)
  '(org-clock-in-switch-to-state nil)
  '(org-clock-into-drawer t)
  '(org-clock-persist (quote history))
@@ -105,7 +106,7 @@
  '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "DONE"))))
  '(package-selected-packages
    (quote
-	(lsp-java lsp-ui flycheck lsp-mode evil-numbers docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
+	(csv-mode sokoban vue-html-mode vue-mode tide magit-filenotify magit-find-file apache-mode ibuffer-vc lsp-java lsp-ui flycheck lsp-mode evil-numbers docker docker-compose-mode dockerfile-mode magit edit-server perlcritic projectile smart-tab copy-as-format jira org-jira yasnippet yaml-mode web-mode string-inflection sqlup-mode sql-indent smart-tabs-mode puppet-mode pde org-tree-slide org-pomodoro markdown-mode magit-gh-pulls ibuffer-projectile helm-projectile helm-perldoc helm-make helm-gtags helm-ag groovy-mode git-link ggtags format-sql flymake-ruby flymake-python-pyflakes flymake-puppet flymake-perlcritic flymake-json flymake-css evil-org dired-k date-at-point clojure-mode bool-flip bind-key atom-one-dark-theme angularjs-mode airline-themes aggressive-indent)))
  '(paren-mode (quote sexp) nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator (quote arrow-fade))
@@ -297,6 +298,7 @@
  '(typescript-indent-level 2)
  '(user-full-name "Brano Zahradnik")
  '(user-mail-address "happy.barney@gmail.com")
+ '(vc-make-backup-files t)
  '(version-control t)
  '(web-mode-markup-indent-offset 2)
  '(whitespace-line-column nil)

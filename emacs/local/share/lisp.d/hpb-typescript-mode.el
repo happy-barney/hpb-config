@@ -14,7 +14,7 @@
    "^"                                  ; Start of line
    "\\([ 	]*\\)"                  ; Skip leading whitespace - capture group \1
    "\\("                                ; begin capture group \2
-   "[a-zA-Z_]+\\|[\\}\\);]"
+   "[a-zA-Z_]+\\|[\\[\\}\\);]"
    "\\)"                                ; end capture group \2
    ))
 

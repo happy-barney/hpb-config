@@ -2,11 +2,27 @@
 
 (require 'hpb-magit-stage-current-buffer)
 
+(defvar hpb/text-sort-map (hpb-define-sparse-map '(
+	("l" . 'sort-lines)
+	("p" . 'sort-paragraphs)
+)))
+
+(defvar hpb/text-map (hpb-define-sparse-map '(
+	("s" . hpb/text-sort-map)
+)))
+
+(define-key global-map (kbd "C-c t") hpb/text-map)
+
 (define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
 (define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
 (define-key global-map (kbd "C-x m"        ) nil) ; default: compose email
 
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
+
+(global-set-key (kbd "C-c i (") 'insert-pair)
+(global-set-key (kbd "C-c i [") 'insert-pair)
+(global-set-key (kbd "C-c i {") 'insert-pair)
+(global-set-key (kbd "C-c i \"") 'insert-pair)
 
 (define-key global-map (kbd "C-x m g") 'magit-status)
 (define-key global-map (kbd "C-x m g") 'magit-status)
@@ -36,7 +52,7 @@
 (define-key global-map (kbd "C-c <right>"       ) 'show-subtree)
 (define-key global-map (kbd "C-c <up>"          ) (lambda () (interactive) (hide-subtree) (show-children)))
 (define-key global-map (kbd "C-c <down>"        ) 'show-children)
-(define-key global-map (kbd "C-c C-<left>"        ) 'hide-subtree)
+(define-key global-map (kbd "C-c C-<left>"        ) (lambda () (interactive) (hide-subtree) (outline-forward-same-level 1)))
 (define-key global-map (kbd "C-c C-<right>"       ) 'show-subtree)
 (define-key global-map (kbd "C-c C-<up>"          ) (lambda () (interactive) (hide-subtree) (show-children)))
 (define-key global-map (kbd "C-c C-<down>"        ) 'show-children)
@@ -46,6 +62,9 @@
 (define-key global-map (kbd "C-c C-<home>"       ) (lambda () (interactive) (outline-up-heading 9)))
 (define-key global-map (kbd "DEL"               ) 'viper-delete-char)
 (define-key global-map (kbd "<insert>"          ) 'ignore)
+
+(define-key global-map (kbd "M-{"               ) 'outline-backward-same-level)
+(define-key global-map (kbd "M-}"               ) 'outline-forward-same-level)
 
 (define-key global-map (kbd "C-S-<up>") 'scroll-up-line)
 (define-key global-map (kbd "C-S-<down>") 'scroll-down-line)
@@ -132,3 +151,6 @@
 (define-key global-map (kbd "C-c n z") 'evil-numbers/dec-at-pt)
 (define-key global-map (kbd "C-c n i") 'evil-numbers/inc-at-pt)
 (define-key global-map (kbd "C-c n d") 'evil-numbers/dec-at-pt)
+
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)

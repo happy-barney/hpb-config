@@ -1,4 +1,6 @@
 
+(require 'cc-mode)
+
 (defun hpb-advice-c-backslash-region (orig-fun &rest args)
   (interactive)
 

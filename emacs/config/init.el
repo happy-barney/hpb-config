@@ -31,6 +31,7 @@
  "~/.config/emacs-local/init.d/"        ; local instance config
  "~/.config/emacs/keymap.d/"            ; keybindings
  "~/.config/emacs-local/keymap.d/"      ; local keybindings
+ "~/.local/share/emacs/advice.d/"
  )
 
 (put 'downcase-region 'disabled nil)
