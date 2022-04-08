@@ -63,6 +63,9 @@
 (define-key global-map (kbd "DEL"               ) 'viper-delete-char)
 (define-key global-map (kbd "<insert>"          ) 'ignore)
 
+(define-key global-map (kbd "M-S-<up>"         ) 'outline-move-subtree-up)
+(define-key global-map (kbd "M-S-<down>"       ) 'outline-move-subtree-down)
+
 (define-key global-map (kbd "M-{"               ) 'outline-backward-same-level)
 (define-key global-map (kbd "M-}"               ) 'outline-forward-same-level)
 
