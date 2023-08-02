@@ -1,6 +1,13 @@
 
 unset PROMPT_COMMAND
-export PS1="\u@\h:\w\\\$ "
+
+if [ -e /etc/.dockerenv ]; then
+	DISTRO='docker'
+else
+	DISTRO=$(lsb_release -i -s)
+fi
+
+export PS1="[$DISTRO] \u@\h:\w\\\$ "
 
 alias dirpart_terminal_name='terminal_name "$(basename "$(pwd)") @ $( basename "$(dirname "$(pwd)")")"'
 
