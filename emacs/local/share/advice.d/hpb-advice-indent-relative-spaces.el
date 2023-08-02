@@ -14,5 +14,6 @@
   )
 
 (advice-add 'indent-relative :around #'hpb-advice-indent-relative-spaces)
+(advice-add 'tab-to-tab-stop :around #'hpb-advice-indent-relative-spaces)
 
 (provide 'hpb-advice-indent-relative-spaces)

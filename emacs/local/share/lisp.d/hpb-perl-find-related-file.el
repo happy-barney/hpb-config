@@ -53,7 +53,7 @@
          (full-path-with-dash (concat prefix path-with-dash))
          )
     (cond
-     ((file-exists-p full-path-without-ext) full-path-without-ext)
+     (t full-path-without-ext)
      ((file-exists-p full-path-with-ext) full-path-with-ext)
      (t full-path-with-dash)
      )
