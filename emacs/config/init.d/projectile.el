@@ -1,14 +1,16 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(require 'projectile)
 (require 'helm-projectile)
 
-(custom-set-variables
- '(projectile-enable-caching t)
- )
-
-(projectile-global-mode)
-
-(setq projectile-switch-project-action 'projectile-vc)
+(use-package projectile
+	:ensure t
+	:config
+	(editorconfig-mode 1)
+	(custom-set-variables
+		'(projectile-enable-caching t)
+		'(projectile-switch-project-action 'projectile-vc)
+	)
+	(projectile-mode)
+)
 
 

@@ -1,5 +1,7 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
+(require 'use-package)
+
 ;;; Path to my lisp repository
 (add-to-list 'load-path "~/.local/share/emacs/advice.d/")
 (add-to-list 'load-path "~/.local/share/emacs/lisp.d/")
