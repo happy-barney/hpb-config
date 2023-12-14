@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: package ... ;
+# key: pkg
+# binding: C-c + i P
+# --
+package `(hpb-perl-guess-package-name)`;
