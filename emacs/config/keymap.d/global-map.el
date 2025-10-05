@@ -47,7 +47,10 @@
 		("S-<f4>"           . 'make-frame)
 		("S-<f5>"           . 'switch-to-buffer-other-frame)
 
+		("C-S-<f9>"         . 'recompile)
 		("C-S-<f12>"        . 'hpb-kill-buffer-delete-file)
+
+		("C-c <f9>"         . 'recompile)
 	)
 )
 
@@ -89,8 +92,6 @@
 
 (define-key global-map (kbd "C-S-<up>") 'scroll-up-line)
 (define-key global-map (kbd "C-S-<down>") 'scroll-down-line)
-
-;;; F-keys
 
 (define-key global-map (kbd "C-c M-%"          ) 'swap-words)
 (define-key global-map (kbd "C-c c"            ) 'compile)
