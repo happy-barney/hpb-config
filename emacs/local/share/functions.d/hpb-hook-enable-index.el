@@ -1,5 +1,6 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
+;;;###autoload
 (defun hpb-hook-enable-index ()
   "wrapper to enable \"best possible\" menu index"
 

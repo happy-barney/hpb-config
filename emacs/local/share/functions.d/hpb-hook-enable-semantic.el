@@ -2,6 +2,7 @@
 
 (require 'semantic)
 
+;;;###autoload
 (defun hpb-hook-enable-semantic ()
   "Wrapper to enable semantic mode (or similar)"
 

@@ -1,5 +1,6 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
+;;;###autoload
 (defun hpb-hook-newline-and-indent ()
   "Map locally <return> key to `newline-and-indent'"
 
