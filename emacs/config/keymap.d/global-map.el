@@ -6,11 +6,7 @@
 	("i" . 'hpb-text--sort-paragraph-lines)
 )))
 
-(defvar hpb/text-map (hpb-define-sparse-map '(
-	("s" . hpb/text-sort-map)
-)))
-
-(define-key global-map (kbd "C-c t") hpb/text-map)
+(define-key global-map (kbd "C-c t") hpb-text--keymap)
 
 (use-package emacs
 	:bind (
