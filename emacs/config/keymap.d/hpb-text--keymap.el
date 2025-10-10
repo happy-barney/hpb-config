@@ -1,8 +1,8 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 ;;;###autoload
-(defvar hpb--text-edit-keymap
+(defvar hpb-text--keymap
 	(hpb-keymap--define-sparse-map '(
-		("s" . hpb-text--sort-keymap)
+		("s" . (hpb-keymap--require 'hpb-text--sort-keymap))
 	))
 )
