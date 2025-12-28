@@ -61,6 +61,8 @@
 (global-set-key (kbd "C-c i [") #'hpb-text--self-insert)
 (global-set-key (kbd "C-c i {") #'hpb-text--self-insert)
 (global-set-key (kbd "C-c i \"") #'hpb-text--self-insert)
+(global-set-key (kbd "C-c i ;") #'hpb-text--self-insert)
+(global-set-key (kbd "C-c i \"") #'hpb-text--self-insert)
 
 (define-key global-map (kbd "C-x m"        ) (hpb-keymap--require 'hpb-magit--keymap)) ; replaces default: compose email
 (define-key global-map (kbd "C-;"               ) #'hpb-text--self-insert)

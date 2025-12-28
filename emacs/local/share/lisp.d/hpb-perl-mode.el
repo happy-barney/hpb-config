@@ -1,7 +1,7 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'cperl-mode)
-(require 'hpb-perl-templates)
+;(require 'hpb-perl-templates)
 
 ;;; Registry cperl-mode as default perl-mode
 (fset 'perl-mode 'cperl-mode)
