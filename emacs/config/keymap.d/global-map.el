@@ -57,6 +57,8 @@
 (global-set-key (kbd "C-c i (") 'hpb-text--self-insert)
 (global-set-key (kbd "C-c i [") 'hpb-text--self-insert)
 (global-set-key (kbd "C-c i {") 'hpb-text--self-insert)
+(global-set-key (kbd "C-c i }") 'hpb-text--self-insert)
+(global-set-key (kbd "C-c i ;") 'hpb-text--self-insert)
 (global-set-key (kbd "C-c i \"") 'hpb-text--self-insert)
 
 (define-key global-map (kbd "C-x m") (hpb-keymap--require 'hpb-magit--keymap))

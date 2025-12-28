@@ -3,7 +3,7 @@
 (require 'cperl-mode)
 (require 'hpb-join)
 (require 'hpb-local)
-(require 'hpb-perl-templates)
+;(require 'hpb-perl-templates)
 
 ;;; Registry cperl-mode as default perl-mode
 (fset 'perl-mode 'cperl-mode)

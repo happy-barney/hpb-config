@@ -9,6 +9,7 @@ export PATH=\
 /bin:\
 /usr/local/games:\
 /usr/games:\
+/snap/bin:\
 .
 
 # Local Variables:
