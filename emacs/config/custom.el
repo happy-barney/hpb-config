@@ -16,9 +16,13 @@
  '(c-basic-offset 4)
  '(c-label-minimum-indentation 0)
  '(c-offsets-alist
-   '((brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +) (brace-list-entry . 0)
-	 (substatement-open . +) (case-label . 0) (arglist-intro . c-lineup-arglist-intro-after-paren)
-	 (arglist-cont-nonempty c-lineup-gcc-asm-reg c-lineup-arglist) (arglist-close . c-lineup-arglist)))
+   '((brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +)
+	 (brace-list-entry . 0)
+	 (substatement-open . +)
+	 (case-label . 0)
+	 (arglist-intro . c-lineup-arglist-intro-after-paren)
+	 (arglist-cont-nonempty c-lineup-gcc-asm-reg c-lineup-arglist)
+	 (arglist-close . c-lineup-arglist)))
  '(case-fold-search t)
  '(column-number-mode t)
  '(completions-format 'vertical)
@@ -72,7 +76,9 @@
  '(line-number-mode t)
  '(magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
  '(magit-repository-directories
-   '(("~/git/github" . 1) ("~/git/fork" . 1) ("~/git/foreign" . 1)))
+   '(("~/git/github" . 1)
+	 ("~/git/fork" . 1)
+	 ("~/git/foreign" . 1)))
  '(magit-save-repository-buffers 'dontask)
  '(magit-visit-ref-behavior '(focus-on-ref create-branch checkout-any checkout-branch))
  '(make-backup-files t)
@@ -94,15 +100,7 @@
  '(org-todo-keyword-faces '(("IN-PROGRESS" . "dark violet")))
  '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "DONE")))
  '(package-selected-packages
-   '(aggressive-indent airline-themes angularjs-mode apache-mode atom-one-dark-theme bind-key bool-flip clojure-mode
-					   copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode
-					   edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json
-					   flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link
-					   groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-perldoc helm-projectile helm-rg
-					   ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify
-					   magit-find-file magit-gh-pulls markdown-mode org-jira org-pomodoro org-tree-slide pde perlcritic
-					   perspective projectile puppet-mode s smart-tab smart-tabs-mode sokoban sql-indent sqlup-mode
-					   string-inflection tide typescript-mode use-package vue-html-mode vue-mode web-mode yaml-mode))
+   '(aggressive-indent airline-themes angularjs-mode apache-mode atom-one-dark-theme bind-key bool-flip clojure-mode copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-projectile helm-rg ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify magit-find-file magit-gh-pulls markdown-mode org-jira org-pomodoro org-tree-slide pde perlcritic perspective projectile puppet-mode s smart-tab smart-tabs-mode sokoban sql-indent sqlup-mode string-inflection tide typescript-mode use-package vue-html-mode vue-mode web-mode yaml-mode))
  '(paren-mode 'sexp nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator 'arrow-fade)
@@ -114,49 +112,123 @@
  '(query-user-mail-address nil)
  '(recent-files-permanent-submenu t)
  '(safe-local-variable-values
-   '((evil-shift-width . 4) (ispell-dictionary . "american")
+   '((evil-shift-width . 4)
+	 (ispell-dictionary . "american")
 	 (hpb/make-play-file-path . hpb-perl-make-play-file-path/sitpub)
 	 (hpb/make-test-file-path . hpb-perl-make-test-file-path/sitpub)
 	 (hpb/make-play-file-path quote hpb-perl-make-play-file-path/sitpub)
-	 (hpb/make-test-file-path quote hpb-perl-make-test-file-path/sitpub) (cperl-close-parent-offset . -2)
-	 (fci-rule-column . 140) (c-comment-only-line-offset 0 . 0)
+	 (hpb/make-test-file-path quote hpb-perl-make-test-file-path/sitpub)
+	 (cperl-close-parent-offset . -2)
+	 (fci-rule-column . 140)
+	 (c-comment-only-line-offset 0 . 0)
 	 (eval progn
 		   (defun my/point-in-defun-declaration-p nil
-			 (let ((bod (save-excursion (c-beginning-of-defun) (point))))
-			   (<= bod (point) (save-excursion (goto-char bod) (re-search-forward "{") (point)))))
-		   (defun my/is-string-concatenation-p nil
-			 "Returns true if the previous line is a string concatenation"
-			 (save-excursion (let ((start (point))) (forward-line -1) (if (re-search-forward " \\+$" start t) t nil))))
-		   (defun my/inside-java-lambda-p nil
-			 "Returns true if point is the first statement inside of a lambda"
-			 (save-excursion
-			   (c-beginning-of-statement-1)
-			   (let ((start (point))) (forward-line -1) (if (search-forward " -> {" start t) t nil))))
-		   (defun my/trailing-paren-p nil
-			 "Returns true if point is a training paren and semicolon"
-			 (save-excursion
-			   (end-of-line)
-			   (let ((endpoint (point))) (beginning-of-line) (if (re-search-forward "[ ]*);$" endpoint t) t nil))))
-		   (defun my/prev-line-call-with-no-args-p nil
-			 "Return true if the previous line is a function call with no arguments"
-			 (save-excursion (let ((start (point))) (forward-line -1) (if (re-search-forward ".($" start t) t nil))))
-		   (defun my/arglist-cont-nonempty-indentation (arg)
-			 (if (my/inside-java-lambda-p) '+
-			   (if (my/is-string-concatenation-p) 16 (unless (my/point-in-defun-declaration-p) '++))))
-		   (defun my/statement-block-intro (arg) (if (and (c-at-statement-start-p) (my/inside-java-lambda-p)) 0 '+))
-		   (defun my/block-close (arg) (if (my/inside-java-lambda-p) '- 0))
-		   (defun my/arglist-close (arg) (if (my/trailing-paren-p) 0 '--))
-		   (defun my/arglist-intro (arg) (if (my/prev-line-call-with-no-args-p) '++ 0)) (c-set-offset 'inline-open 0)
-		   (c-set-offset 'topmost-intro-cont '+) (c-set-offset 'statement-block-intro 'my/statement-block-intro)
-		   (c-set-offset 'block-close 'my/block-close) (c-set-offset 'knr-argdecl-intro '+)
-		   (c-set-offset 'substatement-open '+) (c-set-offset 'substatement-label '+) (c-set-offset 'case-label '+)
-		   (c-set-offset 'label '+) (c-set-offset 'statement-case-open '+) (c-set-offset 'statement-cont '++)
+			 (let
+				 ((bod
+				   (save-excursion
+					 (c-beginning-of-defun)
+					 (point))))
+			   (<= bod
+				   (point)
+				   (save-excursion
+					 (goto-char bod)
+					 (re-search-forward "{")
+					 (point)))))
+		   (defun my/is-string-concatenation-p nil "Returns true if the previous line is a string concatenation"
+				  (save-excursion
+					(let
+						((start
+						  (point)))
+					  (forward-line -1)
+					  (if
+						  (re-search-forward " \\+$" start t)
+						  t nil))))
+		   (defun my/inside-java-lambda-p nil "Returns true if point is the first statement inside of a lambda"
+				  (save-excursion
+					(c-beginning-of-statement-1)
+					(let
+						((start
+						  (point)))
+					  (forward-line -1)
+					  (if
+						  (search-forward " -> {" start t)
+						  t nil))))
+		   (defun my/trailing-paren-p nil "Returns true if point is a training paren and semicolon"
+				  (save-excursion
+					(end-of-line)
+					(let
+						((endpoint
+						  (point)))
+					  (beginning-of-line)
+					  (if
+						  (re-search-forward "[ ]*);$" endpoint t)
+						  t nil))))
+		   (defun my/prev-line-call-with-no-args-p nil "Return true if the previous line is a function call with no arguments"
+				  (save-excursion
+					(let
+						((start
+						  (point)))
+					  (forward-line -1)
+					  (if
+						  (re-search-forward ".($" start t)
+						  t nil))))
+		   (defun my/arglist-cont-nonempty-indentation
+			   (arg)
+			 (if
+				 (my/inside-java-lambda-p)
+				 '+
+			   (if
+				   (my/is-string-concatenation-p)
+				   16
+				 (unless
+					 (my/point-in-defun-declaration-p)
+				   '++))))
+		   (defun my/statement-block-intro
+			   (arg)
+			 (if
+				 (and
+				  (c-at-statement-start-p)
+				  (my/inside-java-lambda-p))
+				 0 '+))
+		   (defun my/block-close
+			   (arg)
+			 (if
+				 (my/inside-java-lambda-p)
+				 '- 0))
+		   (defun my/arglist-close
+			   (arg)
+			 (if
+				 (my/trailing-paren-p)
+				 0 '--))
+		   (defun my/arglist-intro
+			   (arg)
+			 (if
+				 (my/prev-line-call-with-no-args-p)
+				 '++ 0))
+		   (c-set-offset 'inline-open 0)
+		   (c-set-offset 'topmost-intro-cont '+)
+		   (c-set-offset 'statement-block-intro 'my/statement-block-intro)
+		   (c-set-offset 'block-close 'my/block-close)
+		   (c-set-offset 'knr-argdecl-intro '+)
+		   (c-set-offset 'substatement-open '+)
+		   (c-set-offset 'substatement-label '+)
+		   (c-set-offset 'case-label '+)
+		   (c-set-offset 'label '+)
+		   (c-set-offset 'statement-case-open '+)
+		   (c-set-offset 'statement-cont '++)
 		   (c-set-offset 'arglist-intro 'my/arglist-intro)
-		   (c-set-offset 'arglist-cont-nonempty '(my/arglist-cont-nonempty-indentation c-lineup-arglist))
-		   (c-set-offset 'arglist-close 'my/arglist-close) (c-set-offset 'inexpr-class 0) (c-set-offset 'access-label 0)
-		   (c-set-offset 'inher-intro '++) (c-set-offset 'inher-cont '++) (c-set-offset 'brace-list-intro '+)
+		   (c-set-offset 'arglist-cont-nonempty
+						 '(my/arglist-cont-nonempty-indentation c-lineup-arglist))
+		   (c-set-offset 'arglist-close 'my/arglist-close)
+		   (c-set-offset 'inexpr-class 0)
+		   (c-set-offset 'access-label 0)
+		   (c-set-offset 'inher-intro '++)
+		   (c-set-offset 'inher-cont '++)
+		   (c-set-offset 'brace-list-intro '+)
 		   (c-set-offset 'func-decl-cont '++))
-	 (projectile-project-test-cmd . "test-csi-java.sh") (cperl-indent-level 4) (c-indentation-style . bsd)))
+	 (projectile-project-test-cmd . "test-csi-java.sh")
+	 (cperl-indent-level 4)
+	 (c-indentation-style . bsd)))
  '(save-abbrevs t)
  '(save-some-buffers-query-display-buffer nil)
  '(scroll-margin 3)
