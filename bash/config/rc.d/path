@@ -1,6 +1,7 @@
 
 export PATH=\
 ~/bin:\
+~/.local/bin:\
 /usr/local/sbin:\
 /usr/sbin:\
 /sbin:\
