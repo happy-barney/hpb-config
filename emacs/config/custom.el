@@ -63,6 +63,9 @@
  '(global-undo-tree-mode nil)
  '(gutter-buffers-tab-visible-p nil)
  '(helm-grep-file-path-style 'relative)
+ '(helm-grep-save-buffer-name-no-confirm t)
+ '(helm-grep-use-ioccur-style-keys nil)
+ '(helm-projectile-set-input-automatically nil)
  '(html-helper-do-write-file-hooks nil)
  '(html-helper-htmldtd-version
    "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\12")
@@ -100,7 +103,7 @@
  '(org-todo-keyword-faces '(("IN-PROGRESS" . "dark violet")))
  '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "DONE")))
  '(package-selected-packages
-   '(aggressive-indent airline-themes angularjs-mode apache-mode atom-one-dark-theme bind-key bool-flip clojure-mode copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-projectile helm-rg ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify magit-find-file magit-gh-pulls markdown-mode org-jira org-pomodoro org-tree-slide pde perlcritic perspective projectile puppet-mode s smart-tab smart-tabs-mode sokoban sql-indent sqlup-mode string-inflection tide typescript-mode use-package vue-html-mode vue-mode web-mode yaml-mode))
+   '(dotenv-mode aggressive-indent airline-themes angularjs-mode apache-mode atom-one-dark-theme bind-key bool-flip clojure-mode copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-projectile helm-rg ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify magit-find-file magit-gh-pulls markdown-mode org-jira org-pomodoro org-tree-slide pde perlcritic perspective projectile puppet-mode s smart-tab smart-tabs-mode sokoban sql-indent sqlup-mode string-inflection tide typescript-mode use-package vue-html-mode vue-mode web-mode yaml-mode))
  '(paren-mode 'sexp nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator 'arrow-fade)
