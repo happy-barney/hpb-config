@@ -13,6 +13,8 @@
 ;;; Load used libraries
 (require 'hpb-load-directory)
 
+(load "~/.local/share/emacs/functions.d/functions-autoload.el" t)
+
 ;;; Set important variables
 (set-variable 'custom-file          "~/.config/emacs/custom.el")
 (set-variable 'user-emacs-directory "~/.cache/emacs/")
