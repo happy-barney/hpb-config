@@ -19,8 +19,8 @@
     mnf   = merge --no-ff
     p     = format-patch -1
     st    = status
-    stm   = status --untracked=no
-    stfu  = status --untracked=no
+    stm   = status --untracked-files=no
+    stfu  = status --untracked-files=no
     pullsrb = !git stash save && git pull --rebase && git stash pop && echo 'Success!'
     rename  = mv
 
