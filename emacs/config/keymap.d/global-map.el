@@ -94,7 +94,7 @@
 (define-key global-map (kbd     "<f10>" ) 'previous-error)
 (define-key global-map (kbd     "<f11>" ) 'manual-entry)
 (define-key global-map (kbd   "C-<f11>" ) 'execute-extended-command)
-(define-key global-map (kbd     "<f12>" ) 'kill-this-buffer)
+(define-key global-map (kbd     "<f12>" ) 'kill-current-buffer)
 (define-key global-map (kbd   "C-<f12>" ) #'hpb-magit--stage-buffer-file)
 (define-key global-map (kbd "C-S-<f12>" ) 'hpb-kill-buffer-delete-file)
 
@@ -121,14 +121,24 @@
 ;(require 'helm-projectile)
 ;;;
 (define-key viper-vi-basic-map (kbd "C-u") 'universal-argument)
+;(use-package helm-projectile-grep :ensure t)
+;;;
+(define-key viper-vi-basic-map (kbd "C-u") 'universal-argument)
+(define-key projectile-command-map (kbd "s h") 'helm-projectile-ack)
+(define-key projectile-command-map (kbd "f") nil)
+(define-key projectile-command-map (kbd "f p") 'projectile-find-file)
+(define-key projectile-command-map (kbd "f h") 'helm-projectile-find-file)
+(define-key projectile-command-map (kbd "F") nil)
+(define-key projectile-command-map (kbd "F p") 'projectile-find-file-in-known-projects)
+(define-key projectile-command-map (kbd "F h") 'helm-projectile-find-file-in-known-projects)
 
 (require 'whitespace)
 (define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
 
-(require 'projectile)
+(use-package 'projectile :ensure t)
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
 
-(require 'string-inflection)
+(use-package string-inflection :ensure t)
 (define-key global-map (kbd "C-c i i") 'string-inflection-all-cycle)
 (define-key global-map (kbd "C-c i k") 'string-inflection-kebab-case)
 (define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
@@ -138,7 +148,7 @@
 (define-key global-map (kbd "C-c i 0") 'toggle-parens-set-parens)
 (define-key global-map (kbd "C-c i 9") 'toggle-parens-set-parens)
 
-(require 'evil-numbers)
+(use-package evil-numbers :ensure t)
 (define-key global-map (kbd "C-c n +") 'evil-numbers/inc-at-pt)
 (define-key global-map (kbd "C-c n -") 'evil-numbers/dec-at-pt)
 (define-key global-map (kbd "C-c n a") 'evil-numbers/inc-at-pt)
