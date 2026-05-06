@@ -2,16 +2,24 @@
 
 (add-to-list 'default-frame-alist '(background-color . "#c0c0c0"))
 
-(cond
- ((and (= (display-pixel-width) 1920) (= (display-pixel-height) 1200))
-  (add-to-list 'default-frame-alist '(width  . 92))
-  (add-to-list 'default-frame-alist '(height . 55)))
+;(cond
+; ((= (display-pixel-width) 1680)
+;  (add-to-list 'default-frame-alist '(width  . 89))
+;  (add-to-list 'default-frame-alist '(height . 41)))
+; ((= (display-pixel-width) 1920)
+;  (add-to-list 'default-frame-alist '(width  . 103))
+;  (add-to-list 'default-frame-alist '(height . 42)))
+;)
 
- ((= (display-pixel-width) 1920)
-  (add-to-list 'default-frame-alist '(width  . 92))
-  (add-to-list 'default-frame-alist '(height . 41)))
+  (add-to-list 'default-frame-alist '(width  . 132))
+  (add-to-list 'default-frame-alist '(height . 72))
 
- ((= (display-pixel-width) 1680)
-  (add-to-list 'default-frame-alist '(width  . 89))
-  (add-to-list 'default-frame-alist '(height . 41)))
+(defun set-default-frame-size ()
+	(interactive)
+
+(let ((w (alist-get 'width default-frame-alist))
+      (h (alist-get 'height default-frame-alist)))
+  (set-frame-size (selected-frame) w h))
 )
+
+(set-default-frame-size)
