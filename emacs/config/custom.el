@@ -4,10 +4,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
- '(backup-by-copying t)
- '(backup-by-copying-when-linked t)
- '(backup-by-copying-when-mismatch t)
- '(backup-directory-alist '((".*" . "~/.cache/emacs/backup.d/")))
  '(browse-url-browser-function 'browse-url-firefox)
  '(buffers-menu-max-size 30)
  '(buffers-menu-submenus-for-groups-p t)
@@ -42,10 +38,6 @@
  '(cperl-use-syntax-table-text-property t)
  '(delete-key-deletes-forward nil)
  '(delete-old-versions t)
- '(desktop-auto-save-timeout 300)
- '(desktop-base-file-name "emacs.desktop")
- '(desktop-base-lock-name "emacs.desktop.lock")
- '(desktop-path '("~/.cache/emacs/"))
  '(eshell-hist-ignoredups t)
  '(eshell-show-lisp-completions t)
  '(file-precious-flag nil)
@@ -77,7 +69,6 @@
    '(("~/git/github" . 1) ("~/git/fork" . 1) ("~/git/foreign" . 1)))
  '(magit-save-repository-buffers 'dontask)
  '(magit-visit-ref-behavior '(focus-on-ref create-branch checkout-any checkout-branch))
- '(make-backup-files t)
  '(mouse-buffer-menu-mode-mult 1)
  '(mouse-yank-at-point t)
  '(next-line-add-newlines t)
@@ -102,12 +93,12 @@
 					   copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode
 					   edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json
 					   flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link
-					   groovy-mode helm helm-ag helm-gtags helm-make helm-perldoc helm-projectile helm-projectile-grep
-					   ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify
-					   magit-find-file magit-gh-pulls markdown-mode org org-jira org-pomodoro org-tree-slide pde
-					   perlcritic powerline projectile puppet-mode smart-tab smart-tabs-mode sokoban sql-indent
-					   sqlup-mode string-inflection terraform-mode tide typescript-mode use-package vue-html-mode
-					   vue-mode web-mode yaml-imenu yaml-mode yasnippet))
+					   groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-perldoc helm-projectile
+					   helm-projectile-grep ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui
+					   magit magit-filenotify magit-find-file magit-gh-pulls markdown-mode org org-jira org-pomodoro
+					   org-tree-slide pde perlcritic powerline projectile puppet-mode smart-tab smart-tabs-mode sokoban
+					   sql-indent sqlup-mode string-inflection terraform-mode tide typescript-mode use-package
+					   vue-html-mode vue-mode web-mode yaml-imenu yaml-mode yasnippet))
  '(paren-mode 'sexp nil (paren))
  '(powerline-buffer-size-suffix t)
  '(powerline-default-separator 'arrow-fade)
@@ -184,7 +175,6 @@
  '(user-full-name "Brano Zahradnik")
  '(user-mail-address "happy.barney@gmail.com")
  '(vc-make-backup-files t)
- '(version-control t)
  '(web-mode-markup-indent-offset 2)
  '(whitespace-line-column nil)
  '(xsl-element-indent-step 2)
