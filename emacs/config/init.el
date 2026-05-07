@@ -32,14 +32,12 @@
 
 (require 'use-package)
 
-;;; Load configuration parts
-(hpb-load-directory
- "~/.config/emacs/init.d/"              ; user config
- "~/.config/emacs-local/init.d/"        ; local instance config
- "~/.config/emacs/keymap.d/"            ; keybindings
- "~/.config/emacs-local/keymap.d/"      ; local keybindings
- "~/.local/share/emacs/advice.d/"
- )
+(hpb-load-directory "~/.config/emacs/init.d/")
+(hpb-load-directory "~/.config/emacs/keymap.d/")
+(hpb-load-directory "~/.local/share/emacs/advice.d/")
+(hpb-load-directory "~/.config/emacs-local/init.d/")
+(hpb-load-directory "~/.config/emacs-local/keymap.d/")
+(hpb-load-directory "~/.local/share/emacs-local/advice.d/")
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
