@@ -1,7 +1,5 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(require 'use-package)
-
 ;;; Path to my lisp repository
 (add-to-list 'load-path "~/.local/share/emacs/advice.d/")
 (add-to-list 'load-path "~/.local/share/emacs/lisp.d/")
@@ -18,6 +16,10 @@
 ;;; Set important variables
 (set-variable 'custom-file          "~/.config/emacs/custom.el")
 (set-variable 'user-emacs-directory "~/.cache/emacs/")
+(set-variable 'package-user-dir     "~/.cache/emacs/elpa")
+
+;;; Load custom file first (allow setup to force customizable variables)
+(load custom-file)
 
 ;;; Initialize packages
 (require 'package)
@@ -26,8 +28,7 @@
 
 (package-initialize)
 
-;;; Load custom file first (allow setup to force customizable variables)
-(load custom-file)
+(require 'use-package)
 
 ;;; Load configuration parts
 (hpb-load-directory
