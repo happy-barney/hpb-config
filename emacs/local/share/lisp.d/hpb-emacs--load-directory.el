@@ -1,6 +1,7 @@
 ;; -*- Mode: Emacs-Lisp -*-
 
-(defun hpb-load-directory (&rest dirs)
+;;;###autoload
+(defun hpb-emacs--load-directory (&rest dirs)
   "Load all .el or .elc files from dir.
 Directory may not exists and may not be expanded.
 Files are not loaded recursively."
@@ -21,5 +22,5 @@ Files are not loaded recursively."
   t
 )
 
-(provide 'hpb-load-directory)
+(provide 'hpb-utils--load-directory)
 

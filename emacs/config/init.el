@@ -10,9 +10,6 @@
 (add-to-list 'load-path "~/.local/share/emacs-local/lisp.d/")
 (add-to-list 'load-path "~/.local/share/emacs-local/functions.d/")
 
-;;; Load used libraries
-(require 'hpb-load-directory)
-
 (load "~/.local/share/emacs/functions.d/functions-autoload.el" t)
 
 ;;; Set important variables
@@ -30,14 +27,15 @@
 
 (package-initialize)
 
+;;; Package pre-loaded for usage by init files
 (require 'use-package)
 
-(hpb-load-directory "~/.config/emacs/init.d/")
-(hpb-load-directory "~/.config/emacs/keymap.d/")
-(hpb-load-directory "~/.local/share/emacs/advice.d/")
-(hpb-load-directory "~/.config/emacs-local/init.d/")
-(hpb-load-directory "~/.config/emacs-local/keymap.d/")
-(hpb-load-directory "~/.local/share/emacs-local/advice.d/")
+(hpb-emacs--load-directory "~/.config/emacs/init.d/")
+(hpb-emacs--load-directory "~/.config/emacs/keymap.d/")
+(hpb-emacs--load-directory "~/.local/share/emacs/advice.d/")
+(hpb-emacs--load-directory "~/.config/emacs-local/init.d/")
+(hpb-emacs--load-directory "~/.config/emacs-local/keymap.d/")
+(hpb-emacs--load-directory "~/.local/share/emacs-local/advice.d/")
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
