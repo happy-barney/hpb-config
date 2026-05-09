@@ -8,7 +8,6 @@
 (load-library "complete")
 ;(dynamic-completion-mode)
 
-(require 'dired)
 (setq c-recognize-knr-p nil)
 
 (server-start)
