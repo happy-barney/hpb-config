@@ -1,11 +1,9 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(require 'hpb-sort-lines-in-paragraph)
-
 (defvar hpb/text-sort-map (hpb-define-sparse-map '(
 	("l" . 'sort-lines)
 	("p" . 'sort-paragraphs)
-	("i" . 'hpb-sort-lines-in-paragraph)
+	("i" . 'hpb-text--sort-lines-in-paragraph)
 )))
 
 (defvar hpb/text-map (hpb-define-sparse-map '(

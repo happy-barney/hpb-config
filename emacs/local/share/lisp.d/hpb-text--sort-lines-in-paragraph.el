@@ -1,5 +1,6 @@
 
-(defun hpb-sort-lines-in-paragraph ()
+;;;###autoload
+(defun hpb-text--sort-lines-in-paragraph ()
   (interactive)
 
   (let ((orig-line (- (line-number-at-pos (point) t) 1))
@@ -16,4 +17,4 @@
 	  (goto-char (line-end-position)))
 	))
 
-(provide 'hpb-sort-lines-in-paragraph)
+(provide 'hpb-text--sort-lines-in-paragraph)
