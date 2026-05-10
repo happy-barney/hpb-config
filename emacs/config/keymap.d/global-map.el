@@ -1,6 +1,5 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(require 'hpb-magit-stage-current-buffer)
 (require 'hpb-sort-lines-in-paragraph)
 
 (defvar hpb/text-sort-map (hpb-define-sparse-map '(
@@ -35,7 +34,7 @@
 (define-key global-map (kbd "C-x m c o") 'magit-checkout)
 (define-key global-map (kbd "C-x m f f") 'magit-find-file)
 (define-key global-map (kbd "C-x m l l") 'magit-log-current)
-(define-key global-map (kbd "C-x m . a") 'hpb-magit-stage-current-buffer)
+(define-key global-map (kbd "C-x m . a") #'hpb-magit--stage-buffer-file)
 (define-key global-map (kbd "C-x m . b") 'magit-blame)
 (define-key global-map (kbd "C-x m . B") 'magit-blame-quit)
 (define-key global-map (kbd "C-x m . e") 'magit-ediff-compare)
@@ -98,7 +97,7 @@
 (define-key global-map (kbd     "<f11>" ) 'manual-entry)
 (define-key global-map (kbd   "C-<f11>" ) 'execute-extended-command)
 (define-key global-map (kbd     "<f12>" ) 'kill-this-buffer)
-(define-key global-map (kbd   "C-<f12>" ) 'hpb-magit-stage-current-buffer)
+(define-key global-map (kbd   "C-<f12>" ) #'hpb-magit--stage-buffer-file)
 (define-key global-map (kbd "C-S-<f12>" ) 'hpb-kill-buffer-delete-file)
 
 (define-key global-map (kbd "C-c M-%"          ) 'swap-words)
