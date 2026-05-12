@@ -123,7 +123,6 @@
 (require 'projectile)
 (require 'helm-projectile)
 ;;;
-(define-key viper-vi-basic-map (kbd "C-u") 'universal-argument)
 (define-key projectile-command-map (kbd "s h") 'helm-projectile-ag)
 (define-key projectile-command-map (kbd "f") nil)
 (define-key projectile-command-map (kbd "f p") 'projectile-find-file)
