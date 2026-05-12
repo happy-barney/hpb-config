@@ -1,5 +1,5 @@
 
-(use-package 'puppet-mode
+(use-package puppet-mode
 	:ensure t
 	:pin    melpa-stable
 	:disabled

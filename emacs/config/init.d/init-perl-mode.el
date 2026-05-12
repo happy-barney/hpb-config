@@ -54,7 +54,7 @@
 		(cperl-mode     . hpb-hook-newline-and-indent)
 		(cperl-mode     . hpb-hook-enable-index)
 		(cperl-mode     . hpb-hook--cperl-mode)
-		(cperl-mode     . hpb/perl-mode/set-compile-command)
+		;(cperl-mode     . hpb/perl-mode/set-compile-command)
 	)
 
 	:bind (

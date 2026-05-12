@@ -10,5 +10,3 @@
 	:config
 		(setq-default mode-line-format (hpb-modeline--theme-powerline))
 )
-
-(provide 'hpb-setup--powerline)

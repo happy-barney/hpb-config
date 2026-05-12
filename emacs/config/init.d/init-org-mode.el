@@ -1,6 +1,6 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(use-package 'org
+(use-package org
 	:ensure nil
 )
 
