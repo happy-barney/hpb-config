@@ -1,7 +1,7 @@
 ;; -*- Mode: Emacs-Lisp -*-
 
 (require 'files)
-(require 'subr)
+;(require 'subr)
 
 ;;;###autoload
 (defun hpb-emacs--load-directory (&rest dirs)
