@@ -14,9 +14,43 @@
 
 (define-key global-map (kbd "C-c t") hpb/text-map)
 
-(define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
-(define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
-(define-key global-map (kbd "C-x m"        ) nil) ; default: compose email
+(use-package emacs
+	:bind
+		;; Unhind unwanted keys
+		("C-x C-z"      . nil) ; default: iconify-or-deiconify-frame
+		("C-x <return>" . nil) ; default: prefix (choose coding system)
+		("C-x m"        . nil) ; default: compose email
+
+		;; F-keys
+		("<f1>"      . help-command)
+		("<f2>"      . #'save-buffer)
+		("<f3>"      . #'find-file)
+		("<f4>"      . #'revert-buffer)
+		("<f5>"      . #'switch-to-buffer)
+		("<f6>"      . #'other-window)
+		("<f7>"      . nil)
+		("<f8>"      . #'recenter)
+		("<f9>"      . #'next-error)
+		("<f10>"     . #'previous-error)
+		("<f11>"     . nil)
+		("<f12>"     . #'hpb-buffer--kill-this-buffer)
+
+		;; C-F keys
+		("C-<f2>"    . #'copyright-update)
+		("C-<f3>"    . #'find-file-at-point)
+		("C-<f5>"    . #'hpb-project--switch-buffer)
+		("C-<f11>"   . #'execute-extended-command)
+		("C-<f12>"   . #'hpb-magit--stage-buffer-file)
+
+		;; C-F keys
+		("S-<f2>"    . #'save-some-buffers)
+		("S-<f3>"    . #'find-file-at-point)
+		("S-<f4>"    . #'make-frame)
+		("S-<f5>"    . #'switch-to-buffer-other-frame)
+
+		;; C-F keys
+		("C-S-<f12>" . #'hpb-kill-buffer-delete-file)
+)
 
 (define-key global-map (kbd "C-<down-mouse-1>") 'mouse-drag-secondary-pasting)
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
@@ -75,31 +109,6 @@
 (define-key global-map (kbd "C-S-<down>") 'scroll-down-line)
 
 ;;; F-keys
-(define-key global-map (kbd     "<f1>"  ) 'help-command)
-(define-key global-map (kbd     "<f2>"  ) 'save-buffer)
-(define-key global-map (kbd   "C-<f2>"  ) 'copyright-update)
-(define-key global-map (kbd   "S-<f2>"  ) 'save-some-buffers)
-(define-key global-map (kbd     "<f3>"  ) 'find-file)
-(define-key global-map (kbd   "S-<f3>"  ) 'find-file-at-point)
-(define-key global-map (kbd   "C-<f3>"  ) 'find-file-at-point)
-(define-key global-map (kbd     "<f4>"  ) 'revert-buffer)
-(define-key global-map (kbd   "S-<f4>"  ) 'make-frame)
-(define-key global-map (kbd   "C-<f4>"  ) nil)
-(define-key global-map (kbd     "<f5>"  ) 'switch-to-buffer)
-(define-key global-map (kbd   "S-<f5>"  ) 'switch-to-buffer-other-frame)
-(define-key global-map (kbd   "C-<f5>"  ) 'hpb-project--switch-buffer)
-(define-key global-map (kbd     "<f6>"  ) 'other-window)
-(define-key global-map (kbd     "<f7>"  ) nil)
-(define-key global-map (kbd     "<f8>"  ) 'recenter)
-(define-key global-map (kbd   "C-<f8>"  ) 'magit-blame-quit)
-(define-key global-map (kbd     "<f9>"  ) 'next-error)
-(define-key global-map (kbd   "C-<f9>"  ) 'magit-blame)
-(define-key global-map (kbd     "<f10>" ) 'previous-error)
-(define-key global-map (kbd     "<f11>" ) 'manual-entry)
-(define-key global-map (kbd   "C-<f11>" ) 'execute-extended-command)
-(define-key global-map (kbd     "<f12>" ) 'hpb-buffer--kill-current-buffer)
-(define-key global-map (kbd   "C-<f12>" ) #'hpb-magit--stage-buffer-file)
-(define-key global-map (kbd "C-S-<f12>" ) 'hpb-kill-buffer-delete-file)
 
 (define-key global-map (kbd "C-c M-%"          ) 'swap-words)
 (define-key global-map (kbd "C-c c"            ) 'compile)
