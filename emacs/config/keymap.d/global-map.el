@@ -98,7 +98,7 @@
 (define-key global-map (kbd     "<f10>" ) 'previous-error)
 (define-key global-map (kbd     "<f11>" ) 'manual-entry)
 (define-key global-map (kbd   "C-<f11>" ) 'execute-extended-command)
-(define-key global-map (kbd     "<f12>" ) 'kill-this-buffer)
+(define-key global-map (kbd     "<f12>" ) 'hpb-buffer--kill-current-buffer)
 (define-key global-map (kbd   "C-<f12>" ) 'hpb-magit-stage-current-buffer)
 (define-key global-map (kbd "C-S-<f12>" ) 'hpb-kill-buffer-delete-file)
 
