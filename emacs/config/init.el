@@ -32,6 +32,8 @@
 
 (require 'use-package)
 
+(require 'hpb-init--yasnippet)
+
 (hpb-load-directory "~/.config/emacs/init.d/")
 (hpb-load-directory "~/.config/emacs/keymap.d/")
 (hpb-load-directory "~/.local/share/emacs/advice.d/")
