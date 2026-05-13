@@ -1,6 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
 
-(require 'hpb-firstn)
 (require 'ert)
 
 (defun hpb-firstn-as-path (n list)
@@ -8,7 +7,7 @@
   (if (and (= n 1) (string= "" (car list))) "/"
     (mapconcat
      'identity
-     (hpb-firstn n list)
+     (seq-take list n)
      "/")
     )
 )
