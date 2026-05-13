@@ -19,6 +19,7 @@
 (define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
 (define-key global-map (kbd "C-x m"        ) nil) ; default: compose email
 
+(define-key global-map (kbd "C-<down-mouse-1>") 'mouse-drag-secondary-pasting)
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
 (global-set-key (kbd "C-c i (") 'insert-pair)
