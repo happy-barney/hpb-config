@@ -1,6 +1,5 @@
-;; -*- Mode: Emacs-Lisp -*-
 
-(defun hpb-puppet-guess-manifest-name ()
+(defun hpb-puppet--guess-manifest-name ()
   "Guess puppet manifest name of buffer's file name"
   (let* ((case-fold-search nil)
          (file (buffer-file-name (current-buffer)))
@@ -11,5 +10,3 @@
         )
     manifest-name
   ))
-
-(provide 'hpb-puppet-guess-manifest-name)
