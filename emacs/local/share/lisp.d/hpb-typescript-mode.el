@@ -4,11 +4,6 @@
 (require 'hpb-join)
 (require 'hpb-local)
 
-;;; Custom variables
-(custom-set-variables
- '(typescript-indent-level 2)
- )
-
 (defconst hpb-typescript-outline-regexp
   (concat
    "^"                                  ; Start of line
@@ -43,6 +38,7 @@
 		 )))
    )))
 
+;;;###autoload
 (defun hpb-hook-typescript-mode ()
   (interactive)
 
