@@ -36,6 +36,7 @@
 (require 'hpb-init--emacs-auto-save)
 (require 'hpb-init--emacs-backup)
 
+(require 'hpb-init--editorconfig)
 (require 'hpb-init--evil-numbers)
 (require 'hpb-init--font-lock)
 (require 'hpb-init--helm)
