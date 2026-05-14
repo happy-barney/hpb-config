@@ -32,6 +32,8 @@
 
 (require 'use-package)
 
+(require 'hpb-init--helm-projectile)
+(require 'hpb-init--projectile)
 (require 'hpb-init--s)
 (require 'hpb-init--sh-mode)
 (require 'hpb-init--smerge-mode)
