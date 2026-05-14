@@ -1,10 +1,9 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'hpb-tempo)
-(require 'hpb-perl-guess-package-name)
 
 (tempo-define-template "hpb-perl-guess-package"
-  '("package " (hpb-perl-guess-package-name) ";" n
+  '("package " (hpb-perl--guess-package-name) ";" n
     ))
 
 ;;
@@ -40,7 +39,7 @@
 
 ;;
 (tempo-define-template "hpb-perl-pod-name"
-    '("=head1 NAME" n n (hpb-perl-guess-package-name) n n))
+    '("=head1 NAME" n n (hpb-perl--guess-package-name) n n))
 
 (tempo-define-template "hpb-perl-pod-version"
   '("=head1 VERSION"
