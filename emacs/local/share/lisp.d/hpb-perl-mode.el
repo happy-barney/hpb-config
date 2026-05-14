@@ -18,32 +18,6 @@
 ;; (defcustom hpb-perl-cpan-authority)
 ;; (defcustom hpb-perl-cpan-name)
 
-;;; Variables
-(defconst hpb-perl-outline-pod-list
-  '(
-    "=head1\\b"
-    "=head2\\b"
-    "=head3\\b"
-    "=item\\b"
-    "=over\\b"
-    "=back\\b"
-	"=pod\\b"
-    ))
-
-(defconst hpb-perl-outline-regexp
-  (concat
-   "^"                                  ; Start of line
-   "\\([ 	]*\\)"                  ; Skip leading whitespace - capture group \1
-   "\\("                                ; begin capture group \2
-   (hpb-join "\\|"
-             (append
-               hpb-perl-outline-pod-list
-               '("[a-zA-Z_]" "[\"'\\$;\\[\\}\\)]" "=>" "1")
-               )
-             )
-   "\\)"                                ; end capture group \2
-   ))
-
 (defun hpb-perl-insignificant-pod ()
   (and
    (eq major-mode 'cperl-mode)
@@ -82,7 +56,7 @@
 
   (outline-minor-mode t)
 
-  (setq outline-regexp        hpb-perl-outline-regexp)
+  (setq outline-regexp        (hpb-perl--outline-regexp))
   (setq outline-level        'hpb-perl--outline-level)
 
   (hpb-local-load-config "cperl-mode")
