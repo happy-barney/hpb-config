@@ -131,7 +131,6 @@
 (define-key projectile-command-map (kbd "F") nil)
 (define-key projectile-command-map (kbd "F p") 'projectile-find-file-in-known-projects)
 (define-key projectile-command-map (kbd "F h") 'helm-projectile-find-file-in-known-projects)
-(define-key projectile-command-map (kbd "? p") 'helm-perldoc)
 
 (require 'whitespace)
 (define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
