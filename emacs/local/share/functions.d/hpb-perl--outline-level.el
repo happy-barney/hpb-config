@@ -1,0 +1,45 @@
+;; -*- Mode: Emacs-Lisp -*-
+
+;;;###autoload
+(defun hpb-perl--outline-level ()
+  (let ((syntax-type (get-char-property (point) 'syntax-type))
+        (in-pod      (get-char-property (point) 'in-pod))
+        (face        (get-char-property (point) 'face))
+        )
+    (cond
+     ;; skip HERE-DOCS
+     ((string= syntax-type "here-doc") 999)
+     ((string= syntax-type "here-doc") 999)
+     ((string= syntax-type "here-doc-delim") 999)
+     ;; skip multiline strings
+     ((string= syntax-type "string") 999)
+     ((string= face "font-lock-string-face") 999)
+     ((and (eq syntax-type 'pod) (not (eq ?= (char-after (point)))) 999))
+     ((and (eq syntax-type "pod") (not (eq ?= (char-after (point)))) 999))
+     ((and in-pod (not (eq ?= (char-after (point)))) 999))
+     (t
+      (looking-at outline-regexp)
+      (let* ( (match (match-string 2))
+			  (indent (match-string 1))
+			  (indent-level (* 2 (string-width indent)))
+             )
+        (cond
+		 ((string= match "=pod")   0); (string-width "\t"))
+		 ((string= match "=head1") 1); (string-width "\t"))
+		 ((string= match "=head2") 2); (string-width "\t\t"))
+		 ((string= match "=head3") 3); (string-width "\t\t\t"))
+		 ((string= match "=over")  4); (string-width "\t\t\t\t"))
+		 ((string= match "=back")  4); (string-width "\t\t\t\t"))
+		 ((string= match "=item")  5); (string-width "\t\t\t\t\t"))
+		 (in-pod  999)
+		 ((string= match "}") (+ indent-level 1))
+		 ((string= match ")") (+ indent-level 1))
+		 ((string= match "]") (+ indent-level 1))
+		 ((string= match ";") (+ indent-level 1))
+		 (match               indent-level)
+         (t 999)
+         )))
+     ))
+)
+
+(provide 'hpb-perl--outline-level)
