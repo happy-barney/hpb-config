@@ -134,18 +134,6 @@
 (define-key global-map (kbd "M-<up>"         ) 'move-lines-up)
 (define-key global-map (kbd "M-<down>"       ) 'move-lines-down)
 
-(require 'projectile)
-(require 'helm-projectile)
-;;;
-(define-key projectile-command-map (kbd "s h") 'helm-projectile-ag)
-(define-key projectile-command-map (kbd "f") nil)
-(define-key projectile-command-map (kbd "f p") 'projectile-find-file)
-(define-key projectile-command-map (kbd "f h") 'helm-projectile-find-file)
-(define-key projectile-command-map (kbd "F") nil)
-(define-key projectile-command-map (kbd "F p") 'projectile-find-file-in-known-projects)
-(define-key projectile-command-map (kbd "F h") 'helm-projectile-find-file-in-known-projects)
-
-(require 'projectile)
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'evil-numbers)
