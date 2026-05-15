@@ -36,6 +36,7 @@
 (require 'hpb-init--emacs-auto-save)
 (require 'hpb-init--emacs-backup)
 
+(require 'hpb-init--desktop)
 (require 'hpb-init--dired)
 (require 'hpb-init--editorconfig)
 (require 'hpb-init--evil-numbers)
@@ -67,3 +68,5 @@
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(desktop-read)
