@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--emacs-backup)
 (require 'hpb-init--emacs-default-frame)
 
 (require 'hpb-init--evil-numbers)
