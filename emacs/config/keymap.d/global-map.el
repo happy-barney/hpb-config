@@ -61,6 +61,8 @@
 (define-key global-map (kbd "C-c C-<prior>"       ) 'outline-up-heading)
 (define-key global-map (kbd "C-c <home>"         ) (lambda () (interactive) (outline-up-heading 9)))
 (define-key global-map (kbd "C-c C-<home>"       ) (lambda () (interactive) (outline-up-heading 9)))
+(define-key global-map (kbd "C-<up>"             ) 'hpb-move--backward-block-of-lines)
+(define-key global-map (kbd "C-<down>"           ) 'hpb-move--forward-block-of-lines)
 (define-key global-map (kbd "DEL"               ) 'viper-delete-char)
 (define-key global-map (kbd "<insert>"          ) 'ignore)
 
