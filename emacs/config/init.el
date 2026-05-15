@@ -34,6 +34,7 @@
 
 (require 'hpb-init--helm-projectile)
 (require 'hpb-init--magit)
+(require 'hpb-init--markdown-mode)
 (require 'hpb-init--modeline)
 (require 'hpb-init--org-mode)
 (require 'hpb-init--perl-mode)
