@@ -68,6 +68,6 @@
 ;;; Hooks
 (add-hook 'cperl-mode-hook 'hpb-hook-newline-and-indent)
 (add-hook 'cperl-mode-hook 'hpb-hook-enable-index)
-(add-hook 'cperl-mode-hook 'hpb-hook-cperl-mode)
+(add-hook 'cperl-mode-hook 'hpb-hook--cperl-mode)
 (add-hook 'cperl-mode-hook 'hpb/perl-mode/set-compile-command)
 
