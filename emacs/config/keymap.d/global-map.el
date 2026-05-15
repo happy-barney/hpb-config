@@ -10,7 +10,18 @@
 	)
 )
 
-(define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
+(use-package emacs
+	:init
+		(require 'mouse-copy)
+
+	:bind (
+		;; Mouse
+		("<mouse-8>"        . #'previous-buffer)
+		("<mouse-9>"        . #'next-buffer)
+		("<down-mouse-3>"   . #'mouse-buffer-menu)
+		("C-<down-mouse-3>" . #'mouse-buffer-menu)
+	)
+)
 
 (define-key global-map (kbd "C-c i") (hpb-keymap--require 'hpb-text--keymap-insert))
 (define-key global-map (kbd "C-x m") (hpb-keymap--require 'hpb-magit--keymap))
@@ -81,13 +92,10 @@
 
 (define-key global-map (kbd "C-x <left>"   ) 'previous-buffer)
 (define-key global-map (kbd "C-x C-<left>" ) 'previous-buffer)
-(define-key global-map (kbd "<mouse-8>" ) 'previous-buffer)
 (define-key global-map (kbd "C-x <right>"  ) 'next-buffer)
 (define-key global-map (kbd "C-x C-<right>") 'next-buffer)
-(define-key global-map (kbd "<mouse-9>") 'next-buffer)
 
 (define-key global-map (kbd "C-c o f") 'ff-find-other-file)
-(define-key global-map (kbd "<down-mouse-3>"         ) 'mouse-buffer-menu)
 
 (define-key global-map (kbd "C-L"	   ) (lambda () (interactive) (recenter 10)))
 
