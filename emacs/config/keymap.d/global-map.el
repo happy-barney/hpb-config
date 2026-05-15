@@ -146,9 +146,6 @@
 (define-key projectile-command-map (kbd "F p") 'projectile-find-file-in-known-projects)
 (define-key projectile-command-map (kbd "F h") 'helm-projectile-find-file-in-known-projects)
 
-(require 'whitespace)
-(define-key global-map (kbd "C-x ~ SPC") 'whitespace-mode)
-
 (require 'projectile)
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
 
