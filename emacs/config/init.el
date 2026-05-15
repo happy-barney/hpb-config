@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--evil-numbers)
 (require 'hpb-init--font-lock)
 (require 'hpb-init--helm)
 (require 'hpb-init--helm-projectile)
