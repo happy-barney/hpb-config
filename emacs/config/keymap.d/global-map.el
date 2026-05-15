@@ -136,13 +136,5 @@
 
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
 
-(require 'evil-numbers)
-(define-key global-map (kbd "C-c n +") 'evil-numbers/inc-at-pt)
-(define-key global-map (kbd "C-c n -") 'evil-numbers/dec-at-pt)
-(define-key global-map (kbd "C-c n a") 'evil-numbers/inc-at-pt)
-(define-key global-map (kbd "C-c n z") 'evil-numbers/dec-at-pt)
-(define-key global-map (kbd "C-c n i") 'evil-numbers/inc-at-pt)
-(define-key global-map (kbd "C-c n d") 'evil-numbers/dec-at-pt)
-
 (require 'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
