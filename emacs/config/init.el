@@ -33,6 +33,7 @@
 (require 'use-package)
 
 (require 'hpb-init--helm-projectile)
+(require 'hpb-init--hl-line)
 (require 'hpb-init--ibuffer)
 (require 'hpb-init--magit)
 (require 'hpb-init--markdown-mode)
