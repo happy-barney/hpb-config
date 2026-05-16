@@ -3,7 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-save-default nil)
  '(browse-url-browser-function 'browse-url-firefox)
  '(buffers-menu-max-size 30)
  '(buffers-menu-submenus-for-groups-p t)
@@ -24,15 +23,17 @@
  '(completions-format 'vertical)
  '(complex-buffers-menu-p nil)
  '(copyright-year-ranges t)
+ '(cperl-indent-wrt-brace nil)
  '(eshell-hist-ignoredups t)
  '(eshell-show-lisp-completions t)
  '(file-precious-flag nil)
  '(fill-column 120)
+ '(frame-resize-pixelwise t)
  '(fume-max-items 35)
  '(fume-perl-fully-qualified-names nil)
  '(git-commit-major-mode 'markdown-mode)
  '(git-commit-setup-hook
-   '(git-commit-ensure-comment-gap git-commit-save-message git-commit-turn-on-auto-fill git-commit-mode) t)
+   '(git-commit-ensure-comment-gap git-commit-save-message git-commit-mode))
  '(global-undo-tree-mode nil)
  '(gutter-buffers-tab-visible-p nil)
  '(helm-grep-file-path-style 'relative)
@@ -48,13 +49,6 @@
  '(indent-tabs-mode t)
  '(lazy-lock-stealth-lines 1000)
  '(line-number-mode t)
- '(magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
- '(magit-repository-directories
-   '(("~/git/github" . 1)
-	 ("~/git/fork" . 1)
-	 ("~/git/foreign" . 1)))
- '(magit-save-repository-buffers 'dontask)
- '(magit-visit-ref-behavior '(focus-on-ref create-branch checkout-any checkout-branch))
  '(mouse-buffer-menu-mode-mult 1)
  '(mouse-yank-at-point t)
  '(next-line-add-newlines t)
@@ -73,7 +67,7 @@
  '(org-todo-keyword-faces '(("IN-PROGRESS" . "dark violet")))
  '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "DONE")))
  '(package-selected-packages
-   '(move-text dotenv-mode aggressive-indent airline-themes angularjs-mode apache-mode atom-one-dark-theme bind-key bool-flip clojure-mode copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-projectile helm-rg ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify magit-find-file magit-gh-pulls markdown-mode org-jira org-pomodoro org-tree-slide pde perlcritic perspective projectile puppet-mode s smart-tab smart-tabs-mode sokoban sql-indent sqlup-mode string-inflection tide typescript-mode use-package vue-html-mode vue-mode web-mode yaml-mode))
+   '(bison-mode move-text dotenv-mode aggressive-indent airline-themes angularjs-mode apache-mode atom-one-dark-theme bind-key bool-flip clojure-mode copy-as-format csv-mode date-at-point dired-k docker docker-compose-mode dockerfile-mode edit-server editorconfig evil-numbers evil-org flycheck flymake-css flymake-json flymake-perlcritic flymake-puppet flymake-python-pyflakes flymake-ruby format-sql ggtags git-link groovy-mode helm helm-ag helm-core helm-gtags helm-make helm-projectile helm-rg ibuffer-projectile ibuffer-vc jira lsp-java lsp-mode lsp-treemacs lsp-ui magit magit-filenotify magit-find-file magit-gh-pulls markdown-mode org-jira org-pomodoro org-tree-slide pde perlcritic perspective projectile puppet-mode s smart-tab smart-tabs-mode sokoban sql-indent sqlup-mode string-inflection tide typescript-mode use-package vue-html-mode vue-mode web-mode yaml-mode))
  '(paren-mode 'sexp nil (paren))
  '(ps-paper-type 'a4)
  '(ps-print-color-p nil)
@@ -223,7 +217,6 @@
  '(use-short-answers t)
  '(user-full-name "Brano Zahradnik")
  '(user-mail-address "happy.barney@gmail.com")
- '(vc-make-backup-files t)
  '(web-mode-markup-indent-offset 2)
  '(whitespace-line-column nil)
  '(xsl-element-indent-step 2)

@@ -5,6 +5,7 @@
 
 (use-package emacs
 	:init
+		(fset 'yes-or-no-p 'y-or-n-p)
 		(server-start)
 		(hpb-emacs--configure-graphic-frame)
 

@@ -3,6 +3,7 @@
 (require 'thingatpt)
 (require 'hpb-perl-guess-root-for)
 
+;;;###autoload
 (defun hpb-perl-find-other-file ()
   (interactive)
 
