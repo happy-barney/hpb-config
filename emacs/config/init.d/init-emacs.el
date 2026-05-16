@@ -4,11 +4,12 @@
 
 (use-package emacs
 	:init
+		(fset 'yes-or-no-p 'y-or-n-p)
 		(server-start)
 
 	:custom
 		(mouse-wheel-mode   t)
-		(ring-bell-function ignore)
-		(tab-width          4)
+		(ring-bell-function 'ignore)
 		(use-short-anwsers  t)
+		(tab-width          4)
 )

@@ -10,6 +10,7 @@
 (add-to-list 'load-path "~/.local/share/emacs-local/lisp.d/")
 (add-to-list 'load-path "~/.local/share/emacs-local/functions.d/")
 
+(require 'eglot)
 (load "~/.local/share/emacs/functions.d/functions-autoload.el" t)
 
 ;;; Set important variables

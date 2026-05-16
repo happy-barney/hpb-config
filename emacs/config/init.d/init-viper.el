@@ -14,6 +14,6 @@
 	)
 
 	:custom
-		(viper-repeat-from-history-key . nil)
+		(viper-repeat-from-history-key nil)
 )
 

@@ -6,4 +6,4 @@
 	(setq outline-level 'hpb-yaml--outline-level)
 )
 
-(provide 'hpb-yaml--outline-hook
+(provide 'hpb-yaml--outline-hook)

@@ -6,18 +6,21 @@
 ;(require 'hpb-perl-templates)
 
 ;;; Registry cperl-mode as default perl-mode
-(fset 'perl-mode 'cperl-mode)
 
 ;;; Custom variables
 (custom-set-variables
- '(cperl-comment-column 41)
- '(cperl-indent-level 4)
- )
+	'(cperl-comment-column 41)
+	'(cperl-indent-level 4)
+	`(cperl-continued-statement-offset 4)
+	'(cperl-indent-parens-as-block t)
+	'(cperl-indent-wrt-brace nil)
+)
 
 ;;; TODO
 ;; (defcustom hpb-perl-cpan-authority)
 ;; (defcustom hpb-perl-cpan-name)
 
+;;;###autoload
 (defun hpb-perl-insignificant-pod ()
   (and
    (eq major-mode 'cperl-mode)
@@ -26,6 +29,7 @@
    )
 )
 
+;;;###autoload
 (defun hpb-perl-advice-outline-next-heading (orig-fun &rest args)
   (interactive)
 
@@ -36,6 +40,7 @@
 	)
   )
 
+;;;###autoload
 (defun hpb-perl-advice-outline-previous-heading (orig-fun &rest args)
   (interactive)
 
@@ -50,6 +55,7 @@
 (advice-add 'outline-previous-heading :around #'hpb-perl-advice-outline-previous-heading)
 
 ;; *******************************************************************
+;;;###autoload
 (defun hpb-perl-detect-version-number ()
   (interactive)
 
