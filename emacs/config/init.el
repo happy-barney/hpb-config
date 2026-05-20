@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--emacs-auto-save)
 (require 'hpb-init--emacs-backup)
 (require 'hpb-init--emacs-default-frame)
 
