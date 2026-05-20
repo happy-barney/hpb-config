@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--font-lock)
 (require 'hpb-init--helm)
 (require 'hpb-init--helm-projectile)
 (require 'hpb-init--hl-line)
