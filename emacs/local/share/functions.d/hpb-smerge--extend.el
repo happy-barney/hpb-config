@@ -34,7 +34,8 @@ This is useful when both versions need to share some common code that follows th
 	  )
 	))
 
-(defun hpb-smerge-extend (otherpos)
+;;;###autoload
+(defun hpb-smerge--extend (otherpos)
   (interactive
    (list (if (use-region-p) (mark-marker)
            (prefix-numeric-value current-prefix-arg))))
@@ -68,4 +69,4 @@ This is useful when both versions need to share some common code that follows th
         (insert text))))
     (delete-region (if (<= end otherpos) end beg) otherpos)))
 
-(provide 'hpb-smerge-extend)
+(provide 'hpb-smerge--extend)
