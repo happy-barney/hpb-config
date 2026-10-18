@@ -3,7 +3,6 @@
 (require 'cc-mode)
 (require 'outline)
 (require 'hpb-local)
-(require 'hpb-join)
 
 ;;; Variables
 (defconst hpb-c-mode-outline-regexp

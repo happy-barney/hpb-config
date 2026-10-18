@@ -1,7 +1,6 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'typescript-mode)
-(require 'hpb-join)
 (require 'hpb-local)
 
 ;;; Custom variables

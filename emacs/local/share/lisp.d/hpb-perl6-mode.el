@@ -1,7 +1,6 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'cperl-mode)
-(require 'hpb-join)
 (require 'hpb-local)
 (require 'hpb-perl-templates)
 
@@ -33,12 +32,12 @@
    "^"                                  ; Start of line
    "\\([ 	]*\\)"                  ; Skip leading whitespace - capture group \1
    "\\("                                ; begin capture group \2
-   (hpb-join "\\|"
-             (append
-               hpb-perl-outline-pod-list
-               '("[a-z_]+" "1")
-               )
-             )
+   (string-join
+     (append
+       hpb-perl-outline-pod-list
+       '("[a-z_]+" "1")
+       )
+     "\\|")
    "\\)"                                ; end capture group \2
    "\\b"                                ; Word boundary
    ))
