@@ -16,10 +16,10 @@
 (defvar hpb/make-test-file-path 'hpb-perl-make-test-file-path)
 (defvar hpb/make-play-file-path 'hpb-perl-make-play-file-path)
 
-(defun hpb-perl-guess-test-or-implementation-path (path force-dash)
+(defun hpb-perl-guess-test-or-implementation-path (path current-prefix)
   (cond
-   ((hpb-perl-looks-like-test-file-p path) (funcall hpb/make-play-file-path path))
-   ((hpb-perl-looks-like-play-file-p path) (funcall hpb/make-test-file-path path))
+   ((hpb-perl-looks-like-test-file-p path) (funcall hpb/make-play-file-path path current-prefix))
+   ((hpb-perl-looks-like-play-file-p path) (funcall hpb/make-test-file-path path current-prefix))
    (t nil)
   ))
 
@@ -79,7 +79,7 @@
      )
     ))
 
-(defun hpb-perl-make-test-file-path/sitpub (path &optional force-dash)
+(defun hpb-perl-make-test-file-path/sitpub (path &optional current-prefix)
     (let* (
             (path (buffer-file-name))
             (strip-suffix (replace-regexp-in-string "\\.pm$" "/" path))
@@ -87,7 +87,10 @@
 			(test-name (which-function))
         )
 	  (make-directory test-dir t)
+	  (message test-name)
 	  (cond
+	   (current-prefix test-dir)
+	   ((not test-name) test-dir)
 	   ((string-prefix-p "package " test-name) test-dir)
 	   ((string= "" test-name) test-dir)
 	   ((string-prefix-p "package " test-name) test-dir)
@@ -116,7 +119,7 @@
     (concat (s-join "/lib/" (append (butlast parts) (list path-with-slash))))
     ))
 
-(defun hpb-perl-make-play-file-path/sitpub (path)
+(defun hpb-perl-make-play-file-path/sitpub (path &optional current-prefix)
   (let* ((dir-name (directory-file-name (file-name-directory (buffer-file-name))))
 		 (pm-path (replace-regexp-in-string "/t/" "/lib/" dir-name))
          (pm-name (concat pm-path ".pm"))
@@ -124,10 +127,10 @@
     pm-name
     ))
 
-(defun hpb-perl-find-related-file (&optional force-dash)
+(defun hpb-perl-find-related-file (&optional current-prefix)
   (interactive "P")
   (let* ((file-path (buffer-file-name))
-        (other-path (hpb-perl-guess-test-or-implementation-path file-path force-dash)))
+        (other-path (hpb-perl-guess-test-or-implementation-path file-path current-prefix)))
 	(cond
 	 ((file-directory-p other-path) (dired other-path))
 	 (other-path (find-file other-path))

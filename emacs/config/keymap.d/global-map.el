@@ -48,7 +48,10 @@
 		("S-<f4>"           . 'make-frame)
 		("S-<f5>"           . 'switch-to-buffer-other-frame)
 
+		("C-S-<f9>"         . #'recompile)
 		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
+
+		("C-c <f9>"         . #'recompile)
 	)
 )
 (define-key global-map (kbd "C-x m") (hpb-keymap--require 'hpb-magit--keymap))
