@@ -130,7 +130,7 @@
 (define-key global-map (kbd "C-c i i") 'string-inflection-all-cycle)
 (define-key global-map (kbd "C-c i k") 'string-inflection-kebab-case)
 (define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
-(define-key global-map (kbd "C-c i %") 'toggle-parens)
+(define-key global-map (kbd "C-c i %") 'hpb-text--parens-toggle)
 (define-key global-map (kbd "C-c i (") 'toggle-parens-set-parens)
 (define-key global-map (kbd "C-c i )") 'toggle-parens-set-parens)
 (define-key global-map (kbd "C-c i 0") 'toggle-parens-set-parens)
