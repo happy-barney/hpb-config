@@ -3,13 +3,13 @@
 (require 'hpb-magit-stage-current-buffer)
 (require 'hpb-sort-lines-in-paragraph)
 
-(defvar hpb/text-sort-map (hpb-define-sparse-map '(
+(defvar hpb/text-sort-map (hpb-keymap--sparse-map '(
 	("l" . 'sort-lines)
 	("p" . 'sort-paragraphs)
 	("i" . 'hpb-sort-lines-in-paragraph)
 )))
 
-(defvar hpb/text-map (hpb-define-sparse-map '(
+(defvar hpb/text-map (hpb-keymap--sparse-map '(
 	("s" . hpb/text-sort-map)
 )))
 
