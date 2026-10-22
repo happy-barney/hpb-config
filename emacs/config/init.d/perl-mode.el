@@ -2,7 +2,6 @@
 
 (require 'hpb-perl-mode)
 (require 'hpb-perl-templates)
-(require 'hpb-define-key)
 (require 'hpb-hook-newline-and-indent)
 
 ;;; auto-mode-alist
@@ -42,7 +41,7 @@
 
 (require 'hpb-perl-find-other-file)
 (require 'hpb-perl-find-related-file)
-(hpb-define-key cperl-mode-map
+(hpb-keymap--define-key 'cperl-mode-map
                 '(
                   ("C-c ?" . 'cperl-find-bad-style)
                   ("C-c c" . 'cperl-check-syntax)

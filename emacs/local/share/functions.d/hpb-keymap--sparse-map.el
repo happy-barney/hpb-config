@@ -6,7 +6,7 @@
 BINDINGS is list of (kbd-param . symbol).
 Symbol is eval-ed, so has to be quoted.
 Returns the created keymap.
-See also `hpb-define-key'."
+See also `hpb-keymap--define-key'."
 
 	(let ( (key-map (make-sparse-keymap)) )
 		(dolist (def bindings)
