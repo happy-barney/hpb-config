@@ -1,16 +1,9 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'hpb-magit-stage-current-buffer)
-(require 'hpb-sort-lines-in-paragraph)
-
-(defvar hpb/text-sort-map (hpb-keymap--sparse-map '(
-	("l" . 'sort-lines)
-	("p" . 'sort-paragraphs)
-	("i" . 'hpb-sort-lines-in-paragraph)
-)))
 
 (defvar hpb/text-map (hpb-keymap--sparse-map '(
-	("s" . hpb/text-sort-map)
+	("s" . (hpb-keymap--require 'hpb-text--keymap-sort))
 )))
 
 (define-key global-map (kbd "C-c t") hpb/text-map)
