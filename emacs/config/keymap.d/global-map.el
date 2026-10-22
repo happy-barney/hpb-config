@@ -2,12 +2,6 @@
 
 (require 'hpb-magit-stage-current-buffer)
 
-(defvar hpb/text-map (hpb-keymap--sparse-map '(
-	("s" . (hpb-keymap--require 'hpb-text--keymap-sort))
-)))
-
-(define-key global-map (kbd "C-c t") hpb/text-map)
-
 (define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
 (define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
 (define-key global-map (kbd "C-x m"        ) nil) ; default: compose email
@@ -15,6 +9,7 @@
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
 (define-key global-map (kbd "C-c i") (hpb-keymap--require 'hpb-text--keymap-insert))
+(define-key global-map (kbd "C-c t") (hpb-keymap--require 'hpb-text--keymap))
 
 (define-key global-map (kbd "C-x m g") 'magit-status)
 (define-key global-map (kbd "C-x m g") 'magit-status)
