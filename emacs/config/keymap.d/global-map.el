@@ -122,12 +122,6 @@
 (require 'projectile)
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
 
-(require 'string-inflection)
-(define-key global-map (kbd "C-c i i") 'string-inflection-all-cycle)
-(define-key global-map (kbd "C-c i k") 'string-inflection-kebab-case)
-(define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
-(define-key global-map (kbd "C-c i %") 'hpb-text--parens-toggle)
-
 (require 'evil-numbers)
 (define-key global-map (kbd "C-c n +") 'evil-numbers/inc-at-pt)
 (define-key global-map (kbd "C-c n -") 'evil-numbers/dec-at-pt)
