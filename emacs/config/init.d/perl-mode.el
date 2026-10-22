@@ -15,7 +15,7 @@
 
 ;;; Code generation bindings
 (setq hpb-perl-insert-map
-      (hpb-define-sparse-map
+      (hpb-keymap--sparse-map
        '(
          ("i p" . 'tempo-template-hpb-perl-guess-package)
          ("i f" . 'tempo-template-hpb-perl-findbin)
