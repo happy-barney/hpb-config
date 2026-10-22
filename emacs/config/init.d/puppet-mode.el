@@ -11,7 +11,7 @@
   (insert (hpb-puppet-guess-manifest-name))
   )
 
-(hpb-define-key puppet-mode-map
+(hpb-keymap--define-key 'puppet-mode-map
                 '(
 		  ("C-c o f" . 'hpb-puppet-find-other-file)
                   ("C-c i m n" . 'hpb-puppet-insert-manifest-name)
