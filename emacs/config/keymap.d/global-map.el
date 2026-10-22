@@ -1,12 +1,7 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'hpb-magit-stage-current-buffer)
-
-(defvar hpb/text-map (hpb-keymap--sparse-map '(
-	("s" . (hpb-keymap--require 'hpb-text--keymap-sort))
-)))
-
-(define-key global-map (kbd "C-c t") hpb/text-map)
+(define-key global-map (kbd "C-c t") (hpb-keymap--require 'hpb-text--keymap))
 
 (define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
 (define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
