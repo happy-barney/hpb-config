@@ -4,7 +4,6 @@
 (require 'hpb-perl-templates)
 (require 'hpb-define-key)
 (require 'hpb-hook-newline-and-indent)
-(require 'hpb-hook-enable-index)
 
 ;;; auto-mode-alist
 (add-to-list 'auto-mode-alist '("\\.pl\$"    . cperl-mode))
@@ -67,7 +66,7 @@
 
 ;;; Hooks
 (add-hook 'cperl-mode-hook 'hpb-hook-newline-and-indent)
-(add-hook 'cperl-mode-hook 'hpb-hook-enable-index)
+(add-hook 'cperl-mode-hook #'hpb-hook--enable-index)
 (add-hook 'cperl-mode-hook 'hpb-hook-cperl-mode)
 (add-hook 'cperl-mode-hook 'hpb/perl-mode/set-compile-command)
 
