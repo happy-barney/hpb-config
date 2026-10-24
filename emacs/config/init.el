@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--yaml-mode)
 (require 'hpb-init--yasnippet)
 
 (hpb-load-directory "~/.config/emacs/init.d/")
