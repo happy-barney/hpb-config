@@ -47,15 +47,6 @@
 (advice-add 'outline-next-heading :around #'hpb-perl-advice-outline-next-heading)
 (advice-add 'outline-previous-heading :around #'hpb-perl-advice-outline-previous-heading)
 
-;;; Functions
-(defun hpb-hook-cperl-mode ()
-  (interactive)
-
-  (hbp-hook--configure-outline)
-
-  (hpb-hook--load-local-config)
-)
-
 ;; *******************************************************************
 (defun hpb-perl-detect-version-number ()
   (interactive)
