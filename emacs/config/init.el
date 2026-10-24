@@ -36,6 +36,7 @@
 (require 'hpb-init--emacs-auto-save)
 (require 'hpb-init--emacs-backup)
 
+(require 'hpb-init--c-mode)
 (require 'hpb-init--compile)
 (require 'hpb-init--desktop)
 (require 'hpb-init--dired)
