@@ -2,7 +2,6 @@
 ;;; C mode customization
 (require 'cc-mode)
 (require 'outline)
-(require 'hpb-local)
 
 ;;; Variables
 (defconst hpb-c-mode-outline-regexp
@@ -37,7 +36,7 @@
   (interactive)
 
   (outline-minor-mode t)
-  (hpb-local-load-config "c-mode-common")
+  (hpb-hook--load-local-config 'c-mode-common)
   )
 
 (defun hpb-hook-c-mode ()
@@ -48,7 +47,7 @@
   (setq outline-level  'hpb-c-mode-outline-level)
 
   (c-toggle-electric-state -1)
-  (hpb-local-load-config "c-mode")
+  (hpb-hook--load-local-config)
   )
 
 ;;; Provide

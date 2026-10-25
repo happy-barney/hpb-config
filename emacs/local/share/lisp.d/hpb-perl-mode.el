@@ -1,7 +1,6 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
 (require 'cperl-mode)
-(require 'hpb-local)
 (require 'hpb-perl-templates)
 
 ;;; Registry cperl-mode as default perl-mode
@@ -123,7 +122,7 @@
   (setq outline-regexp        hpb-perl-outline-regexp)
   (setq outline-level        'hpb-perl-outline-level)
 
-  (hpb-local-load-config "cperl-mode")
+  (hpb-hook--load-local-config)
 )
 
 ;; *******************************************************************
