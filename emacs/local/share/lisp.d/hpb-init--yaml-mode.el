@@ -1,7 +1,10 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
+(require 'hpb-init--viper)
+
 (use-package yaml-mode
 	:ensure t
+	:after viper
 
 	:mode
 		("\\.ya?ml\\'" . yaml-mode)

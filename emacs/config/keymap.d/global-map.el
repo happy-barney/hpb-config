@@ -47,7 +47,6 @@
 (define-key global-map (kbd "C-c C-<prior>"       ) 'outline-up-heading)
 (define-key global-map (kbd "C-c <home>"         ) (lambda () (interactive) (outline-up-heading 9)))
 (define-key global-map (kbd "C-c C-<home>"       ) (lambda () (interactive) (outline-up-heading 9)))
-(define-key global-map (kbd "DEL"               ) 'viper-delete-char)
 (define-key global-map (kbd "<insert>"          ) 'ignore)
 
 (define-key global-map (kbd "M-S-<up>"         ) 'outline-move-subtree-up)
@@ -108,7 +107,6 @@
 (require 'projectile)
 (require 'helm-projectile)
 ;;;
-(define-key viper-vi-basic-map (kbd "C-u") 'universal-argument)
 (define-key projectile-command-map (kbd "s h") 'helm-projectile-ag)
 (define-key projectile-command-map (kbd "f") nil)
 (define-key projectile-command-map (kbd "f p") 'projectile-find-file)
