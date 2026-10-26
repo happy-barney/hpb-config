@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--viper)
 (require 'hpb-init--whitespace)
 (require 'hpb-init--yaml-mode)
 (require 'hpb-init--yasnippet)
