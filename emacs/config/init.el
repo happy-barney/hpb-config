@@ -32,6 +32,7 @@
 
 (require 'use-package)
 
+(require 'hpb-init--s)
 (require 'hpb-init--sh-mode)
 (require 'hpb-init--smerge-mode)
 (require 'hpb-init--viper)
