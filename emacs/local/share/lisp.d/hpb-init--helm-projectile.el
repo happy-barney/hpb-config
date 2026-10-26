@@ -1,5 +1,7 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
+(require 'hpb-init--helm)
+
 (use-package helm-projectile
 	:ensure t
 
