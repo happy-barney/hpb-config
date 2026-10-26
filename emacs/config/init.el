@@ -32,6 +32,8 @@
 
 (require 'use-package)
 
+(require 'hpb-init--emacs-default-frame)
+
 (require 'hpb-init--evil-numbers)
 (require 'hpb-init--font-lock)
 (require 'hpb-init--helm)
