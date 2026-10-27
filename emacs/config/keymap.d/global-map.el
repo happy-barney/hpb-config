@@ -5,7 +5,7 @@
 
 (define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
 (define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
-(define-key global-map (kbd "C-x m"        ) nil) ; default: compose email
+(define-key global-map (kbd "C-x m"        ) (hpb-keymap--require 'hpb-magit--keymap))
 
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
@@ -14,16 +14,6 @@
 (global-set-key (kbd "C-c i {") 'insert-pair)
 (global-set-key (kbd "C-c i \"") 'insert-pair)
 
-(define-key global-map (kbd "C-x m g") 'magit-status)
-(define-key global-map (kbd "C-x m g") 'magit-status)
-(define-key global-map (kbd "C-x m b") 'magit-branch-popup)
-(define-key global-map (kbd "C-x m y") 'magit-show-refs-popup)
-(define-key global-map (kbd "C-x m z") 'magit-stash-popup)
-(define-key global-map (kbd "C-x m s t") 'magit-status)
-(define-key global-map (kbd "C-x m c o") 'magit-checkout)
-(define-key global-map (kbd "C-x m f f") 'magit-find-file)
-(define-key global-map (kbd "C-x m l l") 'magit-log-current)
-(define-key global-map (kbd "C-x m .") (hpb-keymap--require 'hpb-magit--keymap-file))
 (define-key global-map (kbd "C-;"               ) (lambda () (interactive) (insert ";")))
 (define-key global-map (kbd "C-."               ) 'undo)
 (define-key global-map (kbd "C-_"               ) 'undo)
