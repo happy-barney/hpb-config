@@ -2,7 +2,7 @@
 
 (defvar hpb-magit--keymap-file
 	(hpb-keymap--sparse-map '(
-		("a" . #'hpb-magit-stage-current-buffer)
+		("a" . #'hpb-magit--stage-buffer-file)
 		("b" . #'magit-blame)
 		("B" . #'magit-blame-quit)
 		("e" . #'magit-ediff-compare)
