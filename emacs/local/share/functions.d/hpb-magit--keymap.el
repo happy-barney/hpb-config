@@ -9,6 +9,7 @@
 		("f f"          . #'magit-find-file)
 		("g"            . #'magit-status)
 		("l l"          . #'magit-log-current)
+		("l o"          . #'hpb-magit--log-at-point)
 		("r c"          . #'magit-reflog-current)
 		("s t"          . #'magit-status)
 		("y"            . #'magit-show-refs)
