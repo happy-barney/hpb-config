@@ -44,6 +44,9 @@
 (define-key global-map (kbd "C-S-<up>") 'scroll-up-line)
 (define-key global-map (kbd "C-S-<down>") 'scroll-down-line)
 
+(define-key global-map (kbd "C-<up>"  ) #'hpb-move--backward-block-of-lines)
+(define-key global-map (kbd "C-<down>") #'hpb-move--forward-block-of-lines)
+
 ;;; F-keys
 (define-key global-map (kbd     "<f1>"  ) 'help-command)
 (define-key global-map (kbd     "<f2>"  ) 'save-buffer)
