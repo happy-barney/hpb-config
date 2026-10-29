@@ -11,10 +11,6 @@
 		("i" . #'string-inflection-all-cycle)
 		("k" . #'string-inflection-kebab-case)
 		("u" . #'string-inflection-underscore)
-		("(" . #'toggle-parens-set-parens)
-		(")" . #'toggle-parens-set-parens)
-		("0" . #'toggle-parens-set-parens)
-		("9" . #'toggle-parens-set-parens)
 	))
 	"Keymap with text insert / modify commands."
 )
