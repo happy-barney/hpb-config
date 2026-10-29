@@ -14,10 +14,7 @@
 
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
-(global-set-key (kbd "C-c i (") 'insert-pair)
-(global-set-key (kbd "C-c i [") 'insert-pair)
-(global-set-key (kbd "C-c i {") 'insert-pair)
-(global-set-key (kbd "C-c i \"") 'insert-pair)
+(define-key global-map (kbd "C-c i") (hpb-keymap--require 'hpb-text--keymap-insert))
 
 (define-key global-map (kbd "C-x m g") 'magit-status)
 (define-key global-map (kbd "C-x m g") 'magit-status)
@@ -130,16 +127,6 @@
 
 (require 'projectile)
 (define-key global-map (kbd "C-c p") 'projectile-command-map)
-
-(require 'string-inflection)
-(define-key global-map (kbd "C-c i i") 'string-inflection-all-cycle)
-(define-key global-map (kbd "C-c i k") 'string-inflection-kebab-case)
-(define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
-(define-key global-map (kbd "C-c i %") 'toggle-parens)
-(define-key global-map (kbd "C-c i (") 'toggle-parens-set-parens)
-(define-key global-map (kbd "C-c i )") 'toggle-parens-set-parens)
-(define-key global-map (kbd "C-c i 0") 'toggle-parens-set-parens)
-(define-key global-map (kbd "C-c i 9") 'toggle-parens-set-parens)
 
 (require 'evil-numbers)
 (define-key global-map (kbd "C-c n +") 'evil-numbers/inc-at-pt)
