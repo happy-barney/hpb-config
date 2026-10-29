@@ -28,7 +28,7 @@
 (define-key global-map (kbd "C-x m . l") 'magit-log-buffer-file)
 (define-key global-map (kbd "C-x m . y") 'magit-show-refs-popup)
 (define-key global-map (kbd "C-x m . z") 'magit-stash-popup)
-(define-key global-map (kbd "C-;"               ) (lambda () (interactive) (insert ";")))
+(define-key global-map (kbd "C-;"               ) #'hpb-text--self-insert)
 (define-key global-map (kbd "C-."               ) 'undo)
 (define-key global-map (kbd "C-_"               ) 'undo)
 (define-key global-map (kbd "<backtab>"         ) 'indent-relative)

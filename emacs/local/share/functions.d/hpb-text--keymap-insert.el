@@ -5,12 +5,14 @@
 
 (defvar hpb-text--keymap-insert
 	(hpb-keymap--sparse-map '(
-		("[" . #'insert-pair)
-		("{" . #'insert-pair)
-		("\"" . #'insert-pair)
-		("i" . #'string-inflection-all-cycle)
-		("k" . #'string-inflection-kebab-case)
-		("u" . #'string-inflection-underscore)
+		("("    . #'hpb-text--self-insert)
+		("["    . #'hpb-text--self-insert)
+		("{"    . #'hpb-text--self-insert)
+		("\""   . #'hpb-text--self-insert)
+		("'"    . #'hpb-text--self-insert)
+		("i"    . #'string-inflection-all-cycle)
+		("k"    . #'string-inflection-kebab-case)
+		("u"    . #'string-inflection-underscore)
 	))
 	"Keymap with text insert / modify commands."
 )
