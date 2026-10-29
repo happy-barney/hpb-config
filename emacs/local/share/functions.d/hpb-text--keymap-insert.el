@@ -11,7 +11,6 @@
 		("i" . #'string-inflection-all-cycle)
 		("k" . #'string-inflection-kebab-case)
 		("u" . #'string-inflection-underscore)
-		("%" . #'toggle-parens)
 		("(" . #'toggle-parens-set-parens)
 		(")" . #'toggle-parens-set-parens)
 		("0" . #'toggle-parens-set-parens)
