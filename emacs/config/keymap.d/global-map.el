@@ -1,12 +1,19 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
-(define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
-(define-key global-map (kbd "C-x m"        ) (hpb-keymap--require 'hpb-magit--keymap))
+;; unbind default bindings
+(use-package emacs
+	:bind (
+		("<backtab>"    . nil) ; default: backward-button
+		("C-x C-z"      . nil) ; default: iconify-or-deiconify-frame
+		("C-x <return>" . nil) ; default: prefix (choose coding system)
+		("C-x m"        . nil) ; default: compose email
+	)
+)
 
 (define-key global-map (kbd "C-<down-mouse-3>") 'mouse-buffer-menu)
 
 (define-key global-map (kbd "C-c i") (hpb-keymap--require 'hpb-text--keymap-insert))
+(define-key global-map (kbd "C-x m") (hpb-keymap--require 'hpb-magit--keymap))
 (define-key global-map (kbd "C-c t") (hpb-keymap--require 'hpb-text--keymap))
 
 (define-key global-map (kbd "C-;"               ) #'hpb-text--self-insert)
