@@ -4,15 +4,7 @@
 
 (defvar hpb-text--keymap
 	(hpb-keymap--sparse-map '(
-		("%" . #'hpb-text--parens-toggle)
-		("(" . #'hpb-text--parens-set)
-		(")" . #'hpb-text--parens-set)
-		("0" . #'hpb-text--parens-set)
-		("9" . #'hpb-text--parens-set)
-		("[" . #'hpb-text--parens-set)
-		("]" . #'hpb-text--parens-set)
-		("{" . #'hpb-text--parens-set)
-		("}" . #'hpb-text--parens-set)
+		("%" . (hpb-keymap--require 'hpb-text--keymap-parens))
 		("i" . #'string-inflection-all-cycle)
 		("k" . #'string-inflection-kebab-case)
 		("s" . (hpb-keymap--require 'hpb-text--keymap-sort))
