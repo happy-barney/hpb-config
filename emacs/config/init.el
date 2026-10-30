@@ -34,6 +34,7 @@
 
 (require 'hpb-init--helm-projectile)
 (require 'hpb-init--modeline)
+(require 'hpb-init--move-text)
 (require 'hpb-init--org-mode)
 (require 'hpb-init--perl-mode)
 (require 'hpb-init--projectile)

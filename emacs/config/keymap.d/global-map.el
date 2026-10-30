@@ -100,10 +100,6 @@
 
 (define-key global-map (kbd "C-L"	   ) (lambda () (interactive) (recenter 10)))
 
-(require 'move-lines)
-(define-key global-map (kbd "M-<up>"         ) 'move-lines-up)
-(define-key global-map (kbd "M-<down>"       ) 'move-lines-down)
-
 (require 'evil-numbers)
 (define-key global-map (kbd "C-c n +") 'evil-numbers/inc-at-pt)
 (define-key global-map (kbd "C-c n -") 'evil-numbers/dec-at-pt)
