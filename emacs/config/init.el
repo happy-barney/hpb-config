@@ -52,6 +52,7 @@
 (require 'hpb-init--org-mode)
 (require 'hpb-init--perl-mode)
 (require 'hpb-init--projectile)
+(require 'hpb-init--recentf-mode)
 (require 'hpb-init--s)
 (require 'hpb-init--sh-mode)
 (require 'hpb-init--smerge-mode)
