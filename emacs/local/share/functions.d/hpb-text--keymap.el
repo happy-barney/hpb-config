@@ -9,6 +9,7 @@
 		("k" . #'string-inflection-kebab-case)
 		("s" . (hpb-keymap--require 'hpb-text--keymap-sort))
 		("u" . #'string-inflection-underscore)
+		("y" . #'copyright-update)
 	))
 	"Keymap with text commands (bound to prefix in `global-map')."
 )

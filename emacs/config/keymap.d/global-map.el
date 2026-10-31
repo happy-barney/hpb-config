@@ -34,7 +34,11 @@
 		("S-<f1>"           . #'hpb-transient--help-command)
 		("M-<f1>"           . #'info)
 
+		;; F2 - Write operations
 		("<f2>"             . #'save-buffer)
+		("C-<f2>"           . #'hpb-buffer--save)
+		("S-<f2>"           . #'hpb-transient--write)
+
 		("<f3>"             . #'find-file)
 		("<f4>"             . #'revert-buffer)
 		("<f5>"             . #'switch-to-buffer)
@@ -46,7 +50,6 @@
 
 		("C-<f11>"          . #'execute-extended-command)
 		("C-<f12>"          . #'hpb-magit--stage-buffer-file)
-		("C-<f2>"           . #'copyright-update)
 		("C-<f3>"           . #'find-file-at-point)
 ;		("C-<f4>"           . nil)
 		("C-<f5>"           . #'hpb-project--switch-buffer)
@@ -55,7 +58,6 @@
 		("C-<f9>"           . #'next-error)
 		("C-<f10>"          . #'previous-error)
 
-		("S-<f2>"           . #'save-some-buffers)
 		("S-<f3>"           . #'find-file-at-point)
 		("S-<f4>"           . #'make-frame)
 		("S-<f5>"           . #'switch-to-buffer-other-frame)
