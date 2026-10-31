@@ -22,7 +22,18 @@
 		("C-<down-mouse-3>" . #'mouse-buffer-menu)
 
 		;; F-keys
+		;;   Concept:
+		;;   - <Fn>   - Primary action
+		;;   - <C-Fn> - focused action
+		;;   - <S-Fn> - Exploratory action (usually transient menu)
+		;;   - <M-Fn> - Workflow action
+
+		;; F1 - Help & documentation
 		("<f1>"             . #'help-command)
+		("C-<f1>"           . #'describe-command)
+		("S-<f1>"           . #'hpb-transient--help-command)
+		("M-<f1>"           . #'info)
+
 		("<f2>"             . #'save-buffer)
 		("<f3>"             . #'find-file)
 		("<f4>"             . #'revert-buffer)
