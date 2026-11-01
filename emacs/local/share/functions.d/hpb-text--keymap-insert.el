@@ -10,6 +10,7 @@
 		("{"    . #'hpb-text--self-insert)
 		("\""   . #'hpb-text--self-insert)
 		("'"    . #'hpb-text--self-insert)
+		(";"    . #'hpb-text--self-insert)
 		("i"    . #'string-inflection-all-cycle)
 		("k"    . #'string-inflection-kebab-case)
 		("u"    . #'string-inflection-underscore)

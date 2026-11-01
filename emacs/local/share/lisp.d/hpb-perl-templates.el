@@ -17,24 +17,13 @@
     ))
 
 ;;
-(tempo-define-template "hpb-perl-findbin"
-  '("use FindBin;" n
-    "use lib map $FindBin::Bin . '/' . $_, qw( . ../lib ../lib/perl5 );" n
-    n
-    ))
-
-;;
 (tempo-define-template "hpb-perl-test-prologue"
   '(n
     "use strict;" n
     "use warnings;" n
     n
-    "use FindBin;" n
-    "use lib map $FindBin::Bin . '/' . $_, qw( . ../lib ../lib/perl5 );" n
+    "use require::relative q (test-helper.pl);" n
     n
-    "use Test::More;" n
-    n
-    (flib-separator-by-mode) n
     ))
 
 ;;
@@ -66,7 +55,14 @@
 (tempo-define-template "hpb-perl-pod-author"
   '("=head1 AUTHOR" n
     n
-    "Branislav Zahradnik <barney@cpan.org>" n
+    "Branislav Zahradník <barney@cpan.org>" n
+    n))
+
+(tempo-define-template "hpb-perl-pod-copyright-and-licence"
+  '("=head1 COPYRIGHT AND LICENCE" n
+    n
+	;(hpb-perl-guess-distribution-name)
+    "This distribution is distributed under Artistic Licence 2.0." n
     n))
 
 ;;;

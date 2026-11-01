@@ -64,7 +64,6 @@
 		(cperl-mode . hpb-hook-newline-and-indent)
 		(cperl-mode . hpb-hook--enable-index)
 		(cperl-mode . hpb-hook--configure-outline)
-		(cperl-mode . hpb-hook--load-local-config)
 ;		(cperl-mode . hpb-perl-mode--set-compile-command)
 	)
 

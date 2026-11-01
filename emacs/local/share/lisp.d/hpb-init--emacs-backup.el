@@ -10,6 +10,7 @@
 		(kept-new-versions                  10)
 		(kept-old-versions                  10)
 		(make-backup-files                  t)
+		(vc-make-backup-files               nil)
 		(version-control                    t)
 )
 

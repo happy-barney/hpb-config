@@ -1,0 +1,6 @@
+# Enhanced file path completion in bash - https://github.com/sio/bash-complete-partial-path
+if [ -s "$HOME/.config/bash-complete-partial-path/bash_completion" ]
+then
+    source "$HOME/.config/bash-complete-partial-path/bash_completion"
+    _bcpp --defaults
+fi

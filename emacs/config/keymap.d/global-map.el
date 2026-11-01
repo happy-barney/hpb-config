@@ -83,7 +83,6 @@
 		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
 
 		("C-<f11>"          . #'execute-extended-command)
-		("C-<f9>"           . #'next-error)
 	)
 )
 

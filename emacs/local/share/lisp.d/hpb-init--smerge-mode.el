@@ -5,6 +5,7 @@
 
 	:bind (
 		:map smerge-mode-map
+			("<f5>"  . #'hpb-smerge-extend)
 			("<f6>"  . #'smerge-swap)
 			("<f7>"  . #'smerge-prev)
 			("<f8>"  . #'smerge-next)

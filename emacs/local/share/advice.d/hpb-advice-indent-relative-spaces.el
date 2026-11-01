@@ -5,6 +5,8 @@
   (let* ((orig-indent-tabs-mode indent-tabs-mode))
 	(cond
 	 ((get-char-property (point) 'in-pod) (setq indent-tabs-mode nil))
+	 ((eq (get-char-property (point) 'syntax-type) 'here-doc) (setq indent-tabs-mode nil))
+	 ((eq (get-char-property (point) 'face) 'font-lock-string-face) (setq indent-tabs-mode nil))
 	 ((eq (char-before) ?\t)              nil)
 	 ((eq (char-before) ?\n)              nil)
 	 (t                                   (setq indent-tabs-mode nil))
