@@ -1,7 +1,5 @@
 ;;; -*- Mode: Emacs-Lisp -*-
 
-(require 'hpb-magit-stage-current-buffer)
-
 (define-key global-map (kbd "C-x C-z"      ) nil) ; default: iconify-or-deiconify-frame
 (define-key global-map (kbd "C-x <return>" ) nil) ; default: prefix (choose coding system)
 (define-key global-map (kbd "C-x m"        ) (hpb-keymap--require 'hpb-magit--keymap))
@@ -65,7 +63,7 @@
 (define-key global-map (kbd     "<f11>" ) 'manual-entry)
 (define-key global-map (kbd   "C-<f11>" ) 'execute-extended-command)
 (define-key global-map (kbd     "<f12>" ) #'hpb-buffer--kill-current-buffer)
-(define-key global-map (kbd   "C-<f12>" ) 'hpb-magit-stage-current-buffer)
+(define-key global-map (kbd   "C-<f12>" ) #'hpb-magit--stage-buffer-file)
 (define-key global-map (kbd "C-S-<f12>" ) #'hpb-buffer--kill-delete-file)
 
 (define-key global-map (kbd "C-c M-%"          ) 'swap-words)
