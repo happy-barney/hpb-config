@@ -69,13 +69,17 @@
 		;; F9 - Context management
 		("S-<f9>"           . #'hpb-transient--context)
 
+		;; F10 - Execution management
+		("<f10>"            . #'hpb-transient--execution)
+		("C-<f10>"          . #'hpb-execution--context)
+		("S-<f10>"          . #'hpb-transient--execution)
+
 ;		("<f11>"            . 'manual-entry)
 		("<f12>"            . #'hpb-buffer--kill-current-buffer)
 
 		("C-<f11>"          . #'execute-extended-command)
 		("C-<f12>"          . #'hpb-magit--stage-buffer-file)
 		("C-<f9>"           . #'next-error)
-		("C-<f10>"          . #'previous-error)
 
 		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
 	)
