@@ -75,13 +75,15 @@
 		("S-<f10>"          . #'hpb-transient--execution)
 
 ;		("<f11>"            . 'manual-entry)
+
+		;; F12 - Destructive actions
 		("<f12>"            . #'hpb-buffer--kill-current-buffer)
+		("C-<f12>"          . #'delete-frame)
+		("S-<f12>"          . #'hpb-transient--destructive)
+		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
 
 		("C-<f11>"          . #'execute-extended-command)
-		("C-<f12>"          . #'hpb-magit--stage-buffer-file)
 		("C-<f9>"           . #'next-error)
-
-		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
 	)
 )
 

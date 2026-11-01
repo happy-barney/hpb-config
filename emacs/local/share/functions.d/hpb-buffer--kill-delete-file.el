@@ -2,14 +2,24 @@
 
 ;;;###autoload
 (defun hpb-buffer--kill-delete-file ()
-	"Kill the current buffer and delete the file it is visiting."
+	"Kill the current buffer and delete the file it is visiting.
+When the file is tracked by git, remove it from git as well (see git rm)."
 	(interactive)
-	(let (
+	(let*
+		(
 			(filename (hpb-buffer--ensure-file))
+			(tracked (hpb-magit--is-tracked-buffer-file))
+			(toplevel (and tracked (magit-toplevel)))
+			(relative (and tracked (magit-file-relative-name filename)))
 		)
-		(when (y-or-n-p (format "Delete %s? " filename))
+		(when (y-or-n-p (format "Delete %s%s? " filename (if tracked " (git rm)" "")))
 			(when (kill-buffer)
-				(delete-file filename)
+				(if tracked
+					(let ((default-directory toplevel))
+						(magit-run-git "rm" "-f" "--" relative)
+					)
+					(delete-file filename)
+				)
 				(message "Deleted file %s" filename)
 			)
 		)
