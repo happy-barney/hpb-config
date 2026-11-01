@@ -66,6 +66,9 @@
 		("S-<f8>"           . #'hpb-transient--next)
 		("M-<f8>"           . #'next-error)
 
+		;; F9 - Context management
+		("S-<f9>"           . #'hpb-transient--context)
+
 ;		("<f11>"            . 'manual-entry)
 		("<f12>"            . #'hpb-buffer--kill-current-buffer)
 
