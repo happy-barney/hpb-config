@@ -99,7 +99,7 @@
 
 (defun hpb-perl-find-related-file (&optional force-dash)
   (interactive "P")
-  (let* ((file-path (buffer-file-name))
+  (let* ((file-path (hpb-buffer--ensure-file))
         (other-path (hpb-perl-guess-test-or-implementation-path file-path force-dash)))
     (if other-path (find-file other-path))
 ))
