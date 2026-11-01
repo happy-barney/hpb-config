@@ -44,7 +44,11 @@
 		("C-<f3>"           . #'helm-projectile-find-file)
 		("S-<f3>"           . #'hpb-transient--read)
 
-		("<f4>"             . #'revert-buffer)
+		;; F4 - File and buffer maintenance
+		("<f4>"             . #'hpb-buffer--revert)
+		("C-<f4>"           . #'hpb-magit--revert-buffer-file)
+		("S-<f4>"           . #'hpb-transient--maintenance)
+
 		("<f5>"             . #'switch-to-buffer)
 		("<f6>"             . #'other-window)
 ;		("<f7>"             . nil)
@@ -54,14 +58,12 @@
 
 		("C-<f11>"          . #'execute-extended-command)
 		("C-<f12>"          . #'hpb-magit--stage-buffer-file)
-;		("C-<f4>"           . nil)
 		("C-<f5>"           . #'hpb-project--switch-buffer)
 		("C-<f7>"           . #'previous-buffer)
 		("C-<f8>"           . #'next-buffer)
 		("C-<f9>"           . #'next-error)
 		("C-<f10>"          . #'previous-error)
 
-		("S-<f4>"           . #'make-frame)
 		("S-<f5>"           . #'switch-to-buffer-other-frame)
 
 		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
