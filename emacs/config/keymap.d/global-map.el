@@ -55,15 +55,22 @@
 		("S-<f5>"           . #'hpb-transient--buffer)
 
 		("<f6>"             . #'other-window)
-;		("<f7>"             . nil)
-		("<f8>"             . #'recenter)
+
+		;; F7 / F8 - Pair navigation (previous / next)
+		("<f7>"             . #'hpb-transient--previous)
+		("C-<f7>"           . #'hpb-context--previous)
+		("S-<f7>"           . #'hpb-transient--previous)
+		("M-<f7>"           . #'previous-error)
+		("<f8>"             . #'hpb-transient--next)
+		("C-<f8>"           . #'hpb-context--next)
+		("S-<f8>"           . #'hpb-transient--next)
+		("M-<f8>"           . #'next-error)
+
 ;		("<f11>"            . 'manual-entry)
 		("<f12>"            . #'hpb-buffer--kill-current-buffer)
 
 		("C-<f11>"          . #'execute-extended-command)
 		("C-<f12>"          . #'hpb-magit--stage-buffer-file)
-		("C-<f7>"           . #'previous-buffer)
-		("C-<f8>"           . #'next-buffer)
 		("C-<f9>"           . #'next-error)
 		("C-<f10>"          . #'previous-error)
 
