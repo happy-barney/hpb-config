@@ -49,7 +49,11 @@
 		("C-<f4>"           . #'hpb-magit--revert-buffer-file)
 		("S-<f4>"           . #'hpb-transient--maintenance)
 
-		("<f5>"             . #'switch-to-buffer)
+		;; F5 - Buffer selection
+		("<f5>"             . #'hpb-buffer--switch)
+		("C-<f5>"           . #'hpb-project--switch-buffer)
+		("S-<f5>"           . #'hpb-transient--buffer)
+
 		("<f6>"             . #'other-window)
 ;		("<f7>"             . nil)
 		("<f8>"             . #'recenter)
@@ -58,13 +62,10 @@
 
 		("C-<f11>"          . #'execute-extended-command)
 		("C-<f12>"          . #'hpb-magit--stage-buffer-file)
-		("C-<f5>"           . #'hpb-project--switch-buffer)
 		("C-<f7>"           . #'previous-buffer)
 		("C-<f8>"           . #'next-buffer)
 		("C-<f9>"           . #'next-error)
 		("C-<f10>"          . #'previous-error)
-
-		("S-<f5>"           . #'switch-to-buffer-other-frame)
 
 		("C-S-<f12>"        . #'hpb-buffer--kill-delete-file)
 	)
