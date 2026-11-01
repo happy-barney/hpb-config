@@ -3,7 +3,7 @@
 
 (defun hpb-magit-stage-current-buffer ()
   (interactive)
-  (let* ((file (hpb-buffer--ensure-file)))
+  (let* ((file (hpb-buffer--ensure-file-exists)))
     (magit-stage-file file)
     (message (concat "Stage " (magit-file-relative-name file)))
     )
